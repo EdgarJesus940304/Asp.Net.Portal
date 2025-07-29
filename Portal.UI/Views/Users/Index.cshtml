@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Usuarios";
+}
+
+<h5>Usuarios</h5>
+
+<div class="container">
+    <div class="col-md-12">
+        <table id="usersTable" style="width:100%" class="table table-striped">
+            <thead>
+                <tr>
+                    <th style="text-align:center;">NOMBRE</th>
+                    <th style="text-align:center;">FECHA CREACIÓN</th>
+                    <th style="text-align:center;">USUARIO</th>
+                    <th style="text-align:center;">ESTATUS</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+        </table>
+    </div>
+</div>
+
+
+@section Scripts{
+    <script src="~/Scripts/DataTables/datatables.min.js"></script>
+    <script src="~/Scripts/App/users.js"></script>
+}
+

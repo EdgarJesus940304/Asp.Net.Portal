@@ -1,9 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36121.58 d17.14
+VisualStudioVersion = 17.14.36121.58
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portal.UI", "Portal.UI\Portal.UI.csproj", "{B34B72E9-6D9C-4517-967C-F1275D98BB26}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.-UI", "1.-UI", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.-Business", "2.-Business", "{4C0FABF3-9005-452F-A0C4-4935A990B85D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portal.Business", "Portal.Business\Portal.Business.csproj", "{8F46D7AA-07D1-43D9-ACDA-42166A789CEF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +21,17 @@ Global
 		{B34B72E9-6D9C-4517-967C-F1275D98BB26}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B34B72E9-6D9C-4517-967C-F1275D98BB26}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B34B72E9-6D9C-4517-967C-F1275D98BB26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F46D7AA-07D1-43D9-ACDA-42166A789CEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F46D7AA-07D1-43D9-ACDA-42166A789CEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F46D7AA-07D1-43D9-ACDA-42166A789CEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F46D7AA-07D1-43D9-ACDA-42166A789CEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B34B72E9-6D9C-4517-967C-F1275D98BB26} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{8F46D7AA-07D1-43D9-ACDA-42166A789CEF} = {4C0FABF3-9005-452F-A0C4-4935A990B85D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {162F650C-D859-49DE-965B-1EA81B2C0C4D}
