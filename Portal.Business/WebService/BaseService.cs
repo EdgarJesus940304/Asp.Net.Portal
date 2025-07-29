@@ -11,44 +11,42 @@ namespace Portal.Business.WebService
 {
     public class BaseService<T>
     {
-        private readonly HttpClient client;
-        private readonly string endpoint;
+        private readonly string _endpoint;
+
+        private static readonly HttpClient _client = new HttpClient
+        {
+            BaseAddress = new Uri(EndPoints.BASE_URL)
+        };
+
         public BaseService(string endPoint)
         {
-            client = new HttpClient()
-            {
-                BaseAddress = new Uri(EndPoints.BASE_URL)
-            };
+            _client.DefaultRequestHeaders.Accept.Clear();
+            _client.DefaultRequestHeaders.Add("Accept", "application/json");
 
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Add("Accept", "application/json");
-
-            endpoint = endPoint;
+            _endpoint = endPoint;
         }
 
         public async Task<MessageResponse> Post(T model)
         {
-            string json = JsonConvert.SerializeObject(model);
-            StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
-
             try
             {
-                HttpResponseMessage response = await client.PostAsync(endpoint, content);
-                if (response.IsSuccessStatusCode)
+                string json = JsonConvert.SerializeObject(model);
+                StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+
+                HttpResponseMessage response = await _client.PostAsync(_endpoint, content);
+                string respuestaJson = await response.Content.ReadAsStringAsync();
+
+                try
                 {
-                    string respuestaJson = await response.Content.ReadAsStringAsync();
-                    return new MessageResponse()
-                    {
-                        Message = "OK",
-                        ResponseType = ResponseType.OK
-                    };
+                    return JsonConvert.DeserializeObject<MessageResponse>(respuestaJson)
+                           ?? new MessageResponse { ResponseType = ResponseType.Error, Message = "Respuesta vacía" };
                 }
-                else
+                catch (JsonException)
                 {
-                    return new MessageResponse()
+                    return new MessageResponse
                     {
-                        Message = "OK",
-                        ResponseType = ResponseType.OK
+                        ResponseType = ResponseType.Error,
+                        Message = $"Respuesta no válida: {respuestaJson}"
                     };
                 }
 
@@ -57,12 +55,10 @@ namespace Portal.Business.WebService
             {
                 return new MessageResponse()
                 {
-                    Message = "OK",
-                    ResponseType = ResponseType.OK
+                    Message = $"{e.Message} {e?.InnerException?.Message}",
+                    ResponseType = ResponseType.Error
                 };
             }
-
-      
         }
 
     }

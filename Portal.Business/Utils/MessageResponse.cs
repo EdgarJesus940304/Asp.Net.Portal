@@ -14,10 +14,12 @@ namespace Portal.Business.Utils
         {
             Message = "";
             Data = null;
+            Number = 0;
         }
 
         public ResponseType ResponseType { get; set; }
         public string Message { get; set; }
+        public int Number { get; set; }
         public object Data { get; set; }
     }
 

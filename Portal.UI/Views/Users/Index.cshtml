@@ -3,25 +3,36 @@
     ViewBag.Title = "Usuarios";
 }
 
-<h5>Usuarios</h5>
+<h5>USUARIOS</h5>
 
 <div class="container">
-    <div class="col-md-12">
-        <table id="usersTable" style="width:100%" class="table table-striped">
-            <thead>
-                <tr>
-                    <th style="text-align:center;">NOMBRE</th>
-                    <th style="text-align:center;">FECHA CREACIÓN</th>
-                    <th style="text-align:center;">USUARIO</th>
-                    <th style="text-align:center;">ESTATUS</th>
-                    <th></th>
-                </tr>
-            </thead>
-
-        </table>
+    <div class="row" style="margin-top:30px; margin-bottom:20px;">
+        <div class="col-12 d-flex justify-content-end">
+            <button type="button" class="btn btn-primary" id="newUser">Nuevo usuario</button>
+        </div>
     </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table id="usersTable" style="width:100%" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th style="text-align:center;">NOMBRE</th>
+                        <th style="text-align:center;">FECHA CREACIÓN</th>
+                        <th style="text-align:center;">USUARIO</th>
+                        <th style="text-align:center;">ESTATUS</th>
+                        <th></th>
+                    </tr>
+                </thead>
+
+            </table>
+        </div>
+    </div>
+    
 </div>
 
+<div id="userModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    @Html.Partial("~/Views/Shared/modals/users/_UserModal.cshtml")
+</div>
 
 @section Scripts{
     <script src="~/Scripts/DataTables/datatables.min.js"></script>

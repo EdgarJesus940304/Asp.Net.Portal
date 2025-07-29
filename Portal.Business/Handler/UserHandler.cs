@@ -1,5 +1,6 @@
 ﻿using Portal.Business.Models;
 using Portal.Business.Utils;
+using Portal.Business.WebService;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,25 +11,24 @@ namespace Portal.Business.Handler
 {
     public class UserHandler
     {
-        public MessageResponse GetUsers()
+        public async Task<MessageResponse> SaveUser(UserModel user)
         {
             try
             {
-                return new MessageResponse()
-                {
-                    ResponseType = ResponseType.OK,
-                    Data = user
-                };
+                var service = new BaseService<UserModel>(EndPoints.ENDPOINT_USERS);
+
+                return await service.Post(user);
             }
             catch (Exception ex)
             {
                 return new MessageResponse()
                 {
                     ResponseType = ResponseType.Error,
-                    Message = $"No fue posible obtener el usuario especificado {ex.Message} {ex?.InnerException?.Message}"
+                    Message = $"{ex.Message} {ex?.InnerException?.Message}"
                 };
             }
 
         }
+
     }
 }

@@ -84,3 +84,5 @@ C:\Users\Lenovo\Documents\GitHub\Asp.Net.Portal\Portal.UI\obj\Debug\Portal.UI.cs
 C:\Users\Lenovo\Documents\GitHub\Asp.Net.Portal\Portal.UI\obj\Debug\Portal.UI.csproj.Up2Date
 C:\Users\Lenovo\Documents\GitHub\Asp.Net.Portal\Portal.UI\obj\Debug\Portal.UI.dll
 C:\Users\Lenovo\Documents\GitHub\Asp.Net.Portal\Portal.UI\obj\Debug\Portal.UI.pdb
+C:\Users\Lenovo\Documents\GitHub\Asp.Net.Portal\Portal.UI\bin\Portal.Business.dll
+C:\Users\Lenovo\Documents\GitHub\Asp.Net.Portal\Portal.UI\bin\Portal.Business.pdb
