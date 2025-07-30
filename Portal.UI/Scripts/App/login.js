@@ -25,9 +25,7 @@
                 error: function (response) {
                     $("#login").show();
                     $("#loading").hide();
-                    console.log(jqXhr);
-                    console.log(textStatus);
-                    console.log(errorMessage);
+                    console.log(response);
                 }
             });
 

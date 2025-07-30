@@ -1,4 +1,5 @@
-﻿using Portal.Business.Models;
+﻿using Portal.Business.Handler;
+using Portal.Business.Models;
 using Portal.Business.Utils;
 using System;
 using System.Collections.Generic;
@@ -19,8 +20,8 @@ namespace Portal.UI.Controllers
         {
             try
             {
-                Bussiness.Handlers.SessionHandler sessionHandler = new Bussiness.Handlers.SessionHandler();
-                return sessionHandler.CreateStringToken(user?.Id.ToString(), user?.UserName, (user?.UserProfileId)?.ToString());
+                LoginHandler handler = new LoginHandler();
+                return handler.CreateStringToken(user?.Id.ToString(), user?.UserName)?.ToString());
             }
             catch (Exception)
             {
@@ -31,28 +32,27 @@ namespace Portal.UI.Controllers
         {
             try
             {
-                using (var handler = new LoginHandler())
+                var handler = new LoginHandler();
+                UserModel LoggedUser = new UserModel();
+                var response = handler.Login(userModel);
+                if (response.Number == 200)
                 {
-                    UserModel LoggedUser = new UserModel();
-                    var response = handler.Login(userModel);
-                    if (response.Number == 200)
+                    LoggedUser = null;
+                    DateTime requestAt = DateTime.Now;
+                    DateTime expiresIn = DateTime.Now.AddDays(2);
+                    var token = GenerateToken(LoggedUser, expiresIn);
+
+                    HttpCookie redirectUrlCookie = Request.Cookies.Get("returnUrl");
+                    HttpCookie cookie = new HttpCookie("Cookie_Session")
                     {
-                        LoggedUser = (UserModel)response.Data;
-                        DateTime requestAt = DateTime.Now;
-                        DateTime expiresIn = DateTime.Now.AddDays(2);
-                        var token = GenerateToken(LoggedUser, expiresIn);
-
-                        HttpCookie redirectUrlCookie = Request.Cookies.Get("returnUrl");
-                        HttpCookie cookie = new HttpCookie("Cookie_Session")
-                        {
-                            Value = token,
-                            Expires = DateTime.Now.AddDays(30)
-                        };
-                        Response.Cookies.Add(cookie);
-                    }
-
-                    return Json(response, JsonRequestBehavior.AllowGet);
+                        Value = token,
+                        Expires = DateTime.Now.AddDays(30)
+                    };
+                    Response.Cookies.Add(cookie);
                 }
+
+                return Json(response, JsonRequestBehavior.AllowGet);
+
             }
             catch (Exception ex)
             {

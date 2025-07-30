@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "CFDI";
+}
+
+@section styles{
+    <link href="~/Content/Dropzone/dropzone.css" rel="stylesheet" />
+}
+
+<div class="container">
+    <div class="row">
+        <div id="dropzone">
+            <div id="demo-upload" class="dropzone needsclick dz-clickable">
+                <div class="dz-message needsclick">
+                    <button type="button" class="dz-button">Favor de arrastrar el archivo a cargar.</button><br>
+                    <span class="note needsclick">(O bien puedes buscar tus archivos dando click <strong>aqui.</strong>)</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 ">
+                <button id="quote_upload_submit" class="btn blue btn-outline">Confirmar</button>
+            </div>
+            <div class="col-sm-4 ">
+                <button id="quote_upload_clear" class="btn green-dark btn-outline">Limpiar</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+@section Scripts{
+    <script src="~/Scripts/Dropzone/dropzone.js"></script>
+    <script src="~/Scripts/App/cfdi.js"></script>
+}
