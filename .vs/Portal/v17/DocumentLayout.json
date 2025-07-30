@@ -7,28 +7,24 @@
       "RelativeMoniker": "D:0:0:{B34B72E9-6D9C-4517-967C-F1275D98BB26}|Portal.UI\\Portal.UI.csproj|solutionrelative:portal.ui\\scripts\\app\\users.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B34B72E9-6D9C-4517-967C-F1275D98BB26}|Portal.UI\\Portal.UI.csproj|C:\\Users\\Lenovo\\Documents\\GitHub\\Asp.Net.Portal\\portal.ui\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B34B72E9-6D9C-4517-967C-F1275D98BB26}|Portal.UI\\Portal.UI.csproj|solutionrelative:portal.ui\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8F46D7AA-07D1-43D9-ACDA-42166A789CEF}|Portal.Business\\Portal.Business.csproj|c:\\users\\lenovo\\documents\\github\\asp.net.portal\\portal.business\\handler\\userhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8F46D7AA-07D1-43D9-ACDA-42166A789CEF}|Portal.Business\\Portal.Business.csproj|solutionrelative:portal.business\\handler\\userhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8F46D7AA-07D1-43D9-ACDA-42166A789CEF}|Portal.Business\\Portal.Business.csproj|c:\\users\\lenovo\\documents\\github\\asp.net.portal\\portal.business\\webservice\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8F46D7AA-07D1-43D9-ACDA-42166A789CEF}|Portal.Business\\Portal.Business.csproj|solutionrelative:portal.business\\webservice\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B34B72E9-6D9C-4517-967C-F1275D98BB26}|Portal.UI\\Portal.UI.csproj|C:\\Users\\Lenovo\\Documents\\GitHub\\Asp.Net.Portal\\portal.ui\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B34B72E9-6D9C-4517-967C-F1275D98BB26}|Portal.UI\\Portal.UI.csproj|solutionrelative:portal.ui\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B34B72E9-6D9C-4517-967C-F1275D98BB26}|Portal.UI\\Portal.UI.csproj|c:\\users\\lenovo\\documents\\github\\asp.net.portal\\portal.ui\\views\\shared\\modals\\users\\_usermodal.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B34B72E9-6D9C-4517-967C-F1275D98BB26}|Portal.UI\\Portal.UI.csproj|solutionrelative:portal.ui\\views\\shared\\modals\\users\\_usermodal.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B34B72E9-6D9C-4517-967C-F1275D98BB26}|Portal.UI\\Portal.UI.csproj|c:\\users\\lenovo\\documents\\github\\asp.net.portal\\portal.ui\\content\\font-awesome.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{B34B72E9-6D9C-4517-967C-F1275D98BB26}|Portal.UI\\Portal.UI.csproj|solutionrelative:portal.ui\\content\\font-awesome.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B34B72E9-6D9C-4517-967C-F1275D98BB26}|Portal.UI\\Portal.UI.csproj|c:\\users\\lenovo\\documents\\github\\asp.net.portal\\portal.ui\\app_start\\bundleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B34B72E9-6D9C-4517-967C-F1275D98BB26}|Portal.UI\\Portal.UI.csproj|solutionrelative:portal.ui\\app_start\\bundleconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B34B72E9-6D9C-4517-967C-F1275D98BB26}|Portal.UI\\Portal.UI.csproj|c:\\users\\lenovo\\documents\\github\\asp.net.portal\\portal.ui\\views\\shared\\modals\\users\\_usermodal.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B34B72E9-6D9C-4517-967C-F1275D98BB26}|Portal.UI\\Portal.UI.csproj|solutionrelative:portal.ui\\views\\shared\\modals\\users\\_usermodal.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{8F46D7AA-07D1-43D9-ACDA-42166A789CEF}|Portal.Business\\Portal.Business.csproj|c:\\users\\lenovo\\documents\\github\\asp.net.portal\\portal.business\\webservice\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8F46D7AA-07D1-43D9-ACDA-42166A789CEF}|Portal.Business\\Portal.Business.csproj|solutionrelative:portal.business\\webservice\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B34B72E9-6D9C-4517-967C-F1275D98BB26}|Portal.UI\\Portal.UI.csproj|C:\\Users\\Lenovo\\Documents\\GitHub\\Asp.Net.Portal\\portal.ui\\views\\users\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -42,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 53,
+          "SelectedChildIndex": 52,
           "Children": [
             {
               "$type": "Bookmark",
@@ -242,26 +238,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "BaseService.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\GitHub\\Asp.Net.Portal\\Portal.Business\\WebService\\BaseService.cs",
               "RelativeDocumentMoniker": "Portal.Business\\WebService\\BaseService.cs",
               "ToolTip": "C:\\Users\\Lenovo\\Documents\\GitHub\\Asp.Net.Portal\\Portal.Business\\WebService\\BaseService.cs",
               "RelativeToolTip": "Portal.Business\\WebService\\BaseService.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAqwIEAAABFAAAAAAAAAA==",
+              "ViewState": "AgIAAJUAAAAAAAAAAAAkwJ0AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-30T03:06:49.188Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "_UserModal.cshtml",
               "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\GitHub\\Asp.Net.Portal\\Portal.UI\\Views\\Shared\\modals\\users\\_UserModal.cshtml",
               "RelativeDocumentMoniker": "Portal.UI\\Views\\Shared\\modals\\users\\_UserModal.cshtml",
               "ToolTip": "C:\\Users\\Lenovo\\Documents\\GitHub\\Asp.Net.Portal\\Portal.UI\\Views\\Shared\\modals\\users\\_UserModal.cshtml",
               "RelativeToolTip": "Portal.UI\\Views\\Shared\\modals\\users\\_UserModal.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB8AAAAiAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAABfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-07-30T01:51:53.66Z",
               "EditorCaption": ""
@@ -281,46 +277,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BundleConfig.cs",
-              "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\GitHub\\Asp.Net.Portal\\Portal.UI\\App_Start\\BundleConfig.cs",
-              "RelativeDocumentMoniker": "Portal.UI\\App_Start\\BundleConfig.cs",
-              "ToolTip": "C:\\Users\\Lenovo\\Documents\\GitHub\\Asp.Net.Portal\\Portal.UI\\App_Start\\BundleConfig.cs",
-              "RelativeToolTip": "Portal.UI\\App_Start\\BundleConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-30T01:38:10.485Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "users.js",
               "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\GitHub\\Asp.Net.Portal\\Portal.UI\\Scripts\\App\\users.js",
               "RelativeDocumentMoniker": "Portal.UI\\Scripts\\App\\users.js",
               "ToolTip": "C:\\Users\\Lenovo\\Documents\\GitHub\\Asp.Net.Portal\\Portal.UI\\Scripts\\App\\users.js",
               "RelativeToolTip": "Portal.UI\\Scripts\\App\\users.js",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAIAAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEIBAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-07-29T17:55:21.239Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "UsersController.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\GitHub\\Asp.Net.Portal\\Portal.UI\\Controllers\\UsersController.cs",
               "RelativeDocumentMoniker": "Portal.UI\\Controllers\\UsersController.cs",
               "ToolTip": "C:\\Users\\Lenovo\\Documents\\GitHub\\Asp.Net.Portal\\Portal.UI\\Controllers\\UsersController.cs",
               "RelativeToolTip": "Portal.UI\\Controllers\\UsersController.cs",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAkwFUAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAA1wCMAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-29T17:39:46.679Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\GitHub\\Asp.Net.Portal\\Portal.UI\\Views\\Users\\Index.cshtml",
               "RelativeDocumentMoniker": "Portal.UI\\Views\\Users\\Index.cshtml",
@@ -333,13 +316,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "UserHandler.cs",
               "DocumentMoniker": "C:\\Users\\Lenovo\\Documents\\GitHub\\Asp.Net.Portal\\Portal.Business\\Handler\\UserHandler.cs",
               "RelativeDocumentMoniker": "Portal.Business\\Handler\\UserHandler.cs",
               "ToolTip": "C:\\Users\\Lenovo\\Documents\\GitHub\\Asp.Net.Portal\\Portal.Business\\Handler\\UserHandler.cs",
               "RelativeToolTip": "Portal.Business\\Handler\\UserHandler.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAuwEQAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwB0AAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-29T18:27:39.407Z",
               "EditorCaption": ""

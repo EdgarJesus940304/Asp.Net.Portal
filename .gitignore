@@ -345,6 +345,9 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 
-# Backup folder for Package Reference Convert tool in Visual Studio 2017
-MigrationBackup/
-AlphaDevOpsMx.Erp.Duramax.UI/Web.config
+# Ignorar archivos binarios de compilación
+*.dll
+*.pdb
+
+# Ignorar archivos de usuario de Visual Studio
+*.suo
