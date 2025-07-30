@@ -355,6 +355,7 @@ healthchecksdb
 # Archivos de compilación
 bin/
 obj/
+vs/
 *.dll
 *.exe
 *.pdb
