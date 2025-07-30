@@ -201,6 +201,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Dropzone\dropzone.css" />
     <Content Include="Content\font-awesome.css" />
     <Content Include="Content\Fonts\fontawesome-webfont.svg" />
     <Content Include="Content\Fonts\Simple-Line-Icons.dev.svg" />
@@ -210,6 +211,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\App\cfdi.js" />
     <Content Include="Scripts\App\login.js" />
     <Content Include="Scripts\App\medications.js" />
     <Content Include="Scripts\App\users.js" />
@@ -231,6 +233,8 @@
     <Content Include="Content\Fonts\Simple-Line-Icons.woff" />
     <None Include="Scripts\jquery-3.7.0.intellisense.js" />
     <Content Include="Scripts\DataTables\datatables.min.js" />
+    <Content Include="Scripts\Dropzone\dropzone-amd-module.js" />
+    <Content Include="Scripts\Dropzone\dropzone.js" />
     <Content Include="Scripts\jquery-3.7.0.js" />
     <Content Include="Scripts\jquery-3.7.0.min.js" />
     <Content Include="Scripts\jquery-3.7.0.slim.js" />
