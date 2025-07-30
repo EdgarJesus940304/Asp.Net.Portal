@@ -351,3 +351,28 @@ healthchecksdb
 
 # Ignorar archivos de usuario de Visual Studio
 *.suo
+
+# Archivos de compilación
+bin/
+obj/
+*.dll
+*.exe
+*.pdb
+
+# Archivos de configuración de usuario
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Archivos de VSCode
+.vscode/
+
+# Paquetes y dependencias
+packages/
+*.nupkg
+
+# Otros temporales
+*.log
+*.cache
+*.tmp
