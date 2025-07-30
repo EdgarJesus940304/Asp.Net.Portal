@@ -3,8 +3,19 @@
     GetUsers();
 
     //#region Variables
-    var usersTable = null;
+    var table = null;
+    var url = null;
+    var type = null;
+    var user = new UserModel();
     //#endregion
+
+    $("#newUser").on("click", function () {
+        Clean();
+        url = "/Users/SaveUser";
+        type = "POST";
+        $("#titleModal").text("Nuevo usuario");
+        $("#userModal").modal("show");
+    });
 
     //#region Clases
     function UserModel() {
@@ -15,9 +26,9 @@
     }
     //#endregion
 
-    //#region Consultar
+    //#region Tablero
     function GetUsers() {
-        usersTable = $('#usersTable').DataTable({
+        table = $('#usersTable').DataTable({
             destroy: true,
             "processing": true,
             "serverSide": true,
@@ -89,11 +100,11 @@
                 },
                 {
                     "data": null,
-                    "className": "dt-rigth",
+                    "className": "dt-center",
                     "orderable": false,
                     "defaultContent": "",
                     "render": function (data, type, row) {
-                        return '<button title="Seleccionar"><i class="fa fa-check"></i></button>'
+                        return '<button title="Actualizar" class="btn btn-sm btn-primary btn-actualizar"><i class="fa fa-pencil"></i></button> <button title="Seleccionar" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i></button>'
 
                     }
                 }
@@ -103,34 +114,136 @@
     }
     //#endregion
 
-    //#region Funciones alta, eliminar, editar
+    //#region Consultar
+
+    $('#usersTable tbody').on('click', '.btn-actualizar', function () {
+        Clean();
+        url = "/Users/UpdateUser";
+        type = "PUT";
+        var fila = $(this).closest('tr');
+        var data = $('#usersTable').DataTable().row(fila).data();
+        user.Id = data.Id;
+        $.ajax({
+            url: "/Users/GetUser",
+            type: "GET",
+            data: { Id: user.Id },
+            success: function (response) {
+                if (response.Number == 200) {
+                    $("#name").val(response.Data.Name);
+                    $("#userName").val(response.Data.UserName);
+                    $("#password").val(response.Data.Password);
+                    $("#userModal").modal("show");
+                } else {
+                    Swal.fire({
+                        title: '¡Error!',
+                        text: response.Message,
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+
+                        }
+                    });
+                }
+
+            },
+            error: function (response) {
+                Swal.fire({
+                    title: '¡Error!',
+                    text: response.Message,
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+
+                    }
+                });
+            }
+
+        });
+
+    });
+
+    //#endregion
+
+    //#region Edicion o Alta
+    $("#saveButton").on("click", function () {
+        user.Name = $("#name").val();
+        user.UserName = $("#userName").val();
+        user.Password = $("#password").val();
+        SaveOrUpdate();
+    })
+
+    //#endregion
+
+    //#region Eliminar
 
     $("#newUser").on("click", function () {
         $("#titleModal").text("Nuevo usuario");
         $("#userModal").modal("show");
     });
 
-    $("#saveButton").on("click", function () {
-        var user = new UserModel();
-        user.Name = $("#name").val();
-        user.UserName = $("#userName").val();
-        user.Password = $("#name").val();
+    //#endregion
 
+    //#region Limpiar datos
+    function Clean() {
+        user = new UserModel();
+        $("#name").val("");
+        $("#userName").val("");
+        $("#password").val("");
+
+        url = null;
+        type = null;
+    }
+    //#endregion
+
+    //#region Funciones
+    function SaveOrUpdate() {
         $.ajax({
-            url: "/Users/SaveUser",
+            url: url,
             type: "POST",
             data: { user: user },
             success: function (response) {
-                GetUsers();
+                if (response.Number == 200) {
+                    $("#userModal").modal("hide");
+                    Swal.fire({
+                        title: '¡Correcto!',
+                        text: response.Message,
+                        icon: 'success',
+                        confirmButtonText: 'OK'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            GetUsers();
+                        }
+                    });
+                } else {
+                    Swal.fire({
+                        title: '¡Error!',
+                        text: response.Message,
+                        icon: 'error',
+                        confirmButtonText: 'OK'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+
+                        }
+                    });
+                }
 
             },
             error: function (response) {
+                Swal.fire({
+                    title: '¡Error!',
+                    text: response.Message,
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                }).then((result) => {
+                    if (result.isConfirmed) {
 
+                    }
+                });
             }
 
         });
-    })
-
+    }
     //#endregion
-
 });

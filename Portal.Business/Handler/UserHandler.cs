@@ -27,6 +27,25 @@ namespace Portal.Business.Handler
 
         }
 
+        public async Task<MessageResponse<UserModel>> GetUser(int Id)
+        {
+            try
+            {
+                var service = new BaseService<UserModel>(EndPoints.ENDPOINT_USERS);
+
+                return await service.Get<UserModel>(Id);
+            }
+            catch (Exception ex)
+            {
+                return new MessageResponse<UserModel>()
+                {
+                    ResponseType = ResponseType.Error,
+                    Message = $"{ex.Message} {ex?.InnerException?.Message}"
+                };
+            }
+
+        }
+
 
         public async Task<MessageResponse> SaveUser(UserModel user)
         {

@@ -29,6 +29,32 @@ namespace Portal.UI.Controllers
 
         }
 
+        public async Task<ActionResult> GetUser(int Id)
+        {
+            UserHandler userHandler = new UserHandler();
+
+            var response = await userHandler.GetUser(Id);
+            if (response.ResponseType == ResponseType.OK)
+            {
+                return Json(new MessageResponse<UserModel>()
+                {
+                    Message = response.Message,
+                    Number = 200,
+                    Data = response.Data
+                }, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(new MessageResponse()
+                {
+                    Message = response.Message,
+                    Number = 500
+                }, JsonRequestBehavior.AllowGet);
+            }
+
+        }
+
+
         public async Task<ActionResult> SaveUser(UserModel user)
         {
             UserHandler userHandler = new UserHandler();

@@ -51,6 +51,40 @@ namespace Portal.Business.WebService
                 throw new Exception("Error al obtener datos de la API: " + ex.Message, ex);
             }
         }
+
+        public async Task<MessageResponse<TResponse>> Get<TResponse>(int id)
+        {
+            try
+            {
+                HttpResponseMessage response = await _client.GetAsync($"{_endpoint}/{id}");
+                string respuestaJson = await response.Content.ReadAsStringAsync();
+
+                try
+                {
+                    return JsonConvert.DeserializeObject<MessageResponse<TResponse>>(respuestaJson)
+                           ?? new MessageResponse<TResponse> { ResponseType = ResponseType.Error, Message = "Respuesta vacía" };
+                }
+                catch (JsonException)
+                {
+                    return new MessageResponse<TResponse>
+                    {
+                        ResponseType = ResponseType.Error,
+                        Message = $"Respuesta no válida: {respuestaJson}"
+                    };
+                }
+
+            }
+            catch (HttpRequestException e)
+            {
+                return new MessageResponse<TResponse>()
+                {
+                    Message = $"{e.Message} {e?.InnerException?.Message}",
+                    ResponseType = ResponseType.Error
+                };
+            }
+        }
+
+
         public async Task<MessageResponse> Post(TRequest model)
         {
             try

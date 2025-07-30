@@ -13,14 +13,17 @@ namespace Portal.Business.Utils
         public MessageResponse()
         {
             Message = "";
-            Data = null;
             Number = 0;
         }
 
         public ResponseType ResponseType { get; set; }
         public string Message { get; set; }
         public int Number { get; set; }
-        public object Data { get; set; }
     }
 
+
+    public class MessageResponse<T> : MessageResponse
+    {
+        public T Data { get; set; }
+    }
 }
