@@ -1,0 +1,54 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Iniciar Sesión</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="~/Content/Site/login.css" rel="stylesheet" />
+    <link href="~/Content/sweetalert2.css" rel="stylesheet" />
+</head>
+<body>
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-7 col-lg-5">
+                    <div class="login-wrap p-4 p-md-5">
+                        <div class="d-flex align-items-center justify-content-center">
+                        </div>
+                        <br />
+                        <h3 class="text-center mb-4">PORTAL</h3>
+                        <div class="form-group">
+                            <input type="text" class="form-control rounded-left" id="userkey" placeholder="Usuario" required>
+                        </div>
+                        <div class="form-group d-flex">
+                            <input type="password" class="form-control rounded-left" id="userPassword" placeholder="Contraseña" required>
+                        </div>
+                        <div class="form-group">
+                            <button id="login" class="form-control btn btn-primary rounded submit px-3">INGRESAR</button>
+                            <button id="loading" style="display:none;" disabled class="form-control btn btn-primary rounded submit px-3"><i class="fa fa-spinner fa-spin fa-1x fa-fw"></i> INGRESANDO...</button>
+                        </div>
+                        <div class="form-group d-md-flex">
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <br />
+        <center><p>&reg; @DateTime.Now.Year </p></center>
+    </section>
+    <script src="~/Scripts/jquery-3.7.0.js"></script>
+    <script src="~/Scripts/App/login.js"></script>
+</body>
+
+</html>
+
