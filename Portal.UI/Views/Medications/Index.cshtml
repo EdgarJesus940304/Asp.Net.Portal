@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Medicamentos";
+}
+
+<h5>Tablero de medicamentos</h5>
+
+<div class="container">
+    <div class="row" style="margin-top:20px; margin-bottom:20px;">
+        <div class="col-12 d-flex justify-content-end">
+            <button type="button" class="btn btn-primary" id="newMedication"><i class="fa fa-plus"></i> Nuevo medicamento</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table id="medicationTable" style="width:100%" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th style="text-align:center;">Nombre</th>
+                        <th style="text-align:center;">Concentración</th>
+                        <th style="text-align:center;">Forma Farmaceutica</th>
+                        <th style="text-align:center;">Precio</th>
+                        <th style="text-align:center;">Presentación</th>
+                        <th style="text-align:center;">Stock</th>
+                        <th style="text-align:center;">Estatus</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<div id="medicationModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    @Html.Partial("~/Views/Shared/modals/medications/_MedicationModal.cshtml")
+</div>
+
+@section Scripts{
+    <script src="~/Scripts/DataTables/datatables.min.js"></script>
+    <script src="~/Scripts/App/medications.js"></script>
+}
+

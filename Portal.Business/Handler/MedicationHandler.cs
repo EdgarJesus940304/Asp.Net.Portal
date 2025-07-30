@@ -10,15 +10,15 @@ using System.Threading.Tasks;
 
 namespace Portal.Business.Handler
 {
-    public class UserHandler
+    public class MedicationHandler
     {
-        public async Task<RootResult<UserModel>> ListUsers(FilterDataTableModel model)
+        public async Task<RootResult<MedicationModel>> ListMedications(FilterDataTableModel model)
         {
             try
             {
-                var service = new BaseService<FilterDataTableModel>(EndPoints.ENDPOINT_USERS);
+                var service = new BaseService<FilterDataTableModel>(EndPoints.ENDPOINT_MEDICATIONS);
 
-                return await service.List<UserModel>(model);
+                return await service.List<MedicationModel>(model);
             }
             catch (Exception ex)
             {
@@ -27,17 +27,17 @@ namespace Portal.Business.Handler
 
         }
 
-        public async Task<MessageResponse<UserModel>> GetUser(int id)
+        public async Task<MessageResponse<MedicationModel>> GetMedication(int id)
         {
             try
             {
-                var service = new BaseService<UserModel>(EndPoints.ENDPOINT_USERS);
+                var service = new BaseService<MedicationModel>(EndPoints.ENDPOINT_MEDICATIONS);
 
-                return await service.Get<UserModel>(id);
+                return await service.Get<MedicationModel>(id);
             }
             catch (Exception ex)
             {
-                return new MessageResponse<UserModel>()
+                return new MessageResponse<MedicationModel>()
                 {
                     ResponseType = ResponseType.Error,
                     Message = $"{ex.Message} {ex?.InnerException?.Message}"
@@ -46,32 +46,13 @@ namespace Portal.Business.Handler
 
         }
 
-        public async Task<MessageResponse> SaveUser(UserModel user)
+        public async Task<MessageResponse> SaveMedication(MedicationModel medication)
         {
             try
             {
-                var service = new BaseService<UserModel>(EndPoints.ENDPOINT_USERS);
+                var service = new BaseService<MedicationModel>(EndPoints.ENDPOINT_MEDICATIONS);
 
-                return await service.Post(user);
-            }
-            catch (Exception ex)
-            {
-                return new MessageResponse()
-                {
-                    ResponseType = ResponseType.Error,
-                    Message = $"{ex.Message} {ex?.InnerException?.Message}"
-                };
-            }
-
-        }
-
-        public async Task<MessageResponse> UpdateUser(UserModel user)
-        {
-            try
-            {
-                var service = new BaseService<UserModel>(EndPoints.ENDPOINT_USERS);
-
-                return await service.Put(user.Id, user);
+                return await service.Post(medication);
             }
             catch (Exception ex)
             {
@@ -84,13 +65,13 @@ namespace Portal.Business.Handler
 
         }
 
-        public async Task<MessageResponse> DeleteUser(int userId)
+        public async Task<MessageResponse> UpdateMedication(MedicationModel medication)
         {
             try
             {
-                var service = new BaseService<UserModel>(EndPoints.ENDPOINT_USERS);
+                var service = new BaseService<MedicationModel>(EndPoints.ENDPOINT_MEDICATIONS);
 
-                return await service.Delete(userId);
+                return await service.Put(medication.Id, medication);
             }
             catch (Exception ex)
             {
@@ -103,5 +84,23 @@ namespace Portal.Business.Handler
 
         }
 
+        public async Task<MessageResponse> DeleteMedication(int medicationId)
+        {
+            try
+            {
+                var service = new BaseService<MedicationModel>(EndPoints.ENDPOINT_MEDICATIONS);
+
+                return await service.Delete(medicationId);
+            }
+            catch (Exception ex)
+            {
+                return new MessageResponse()
+                {
+                    ResponseType = ResponseType.Error,
+                    Message = $"{ex.Message} {ex?.InnerException?.Message}"
+                };
+            }
+
+        }
     }
 }
