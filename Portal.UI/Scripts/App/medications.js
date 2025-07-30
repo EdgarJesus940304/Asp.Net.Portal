@@ -1,6 +1,7 @@
 ﻿$(function () {
 
     GetMedications();
+    GetCatalogs();
 
     //#region Variables
     var url = null;
@@ -142,12 +143,14 @@
         var fila = $(this).closest('tr');
         var data = $('#medicationTable').DataTable().row(fila).data();
         $("#titleModal").text("Consultar medicamento");
-        $('#status').prop('disabled', true);
         $('#name').prop('disabled', true);
-        $('#userName').prop('disabled', true);
-        $('#password').prop('disabled', true);
+        $('#concentration').prop('disabled', true);
+        $('#presentation').prop('disabled', true);
+        $('#price').prop('disabled', true);
+        $('#stock').prop('disabled', true);
+        $('#status').prop('disabled', true);
         $('#saveButton').hide();
-        user.Id = data.Id;
+        medication.Id = data.Id;
         GetData();
     });
     //#endregion
@@ -160,12 +163,12 @@
         $("#medicationModal").modal("show");
     });
 
-    $('#usersTable tbody').on('click', '.btn-update', function () {
+    $('#medicationTable tbody').on('click', '.btn-update', function () {
         Clean();
         url = "/Medications/UpdateMedication";
         var fila = $(this).closest('tr');
-        var data = $('#usersTable').DataTable().row(fila).data();
-        user.Id = data.Id;
+        var data = $('#medicationTable').DataTable().row(fila).data();
+        medication.Id = data.Id;
 
         $("#titleModal").text("Editar medicamento");
         GetData();
@@ -202,9 +205,9 @@
         }).then((result) => {
             if (result.isConfirmed) {
                 $.ajax({
-                    url: "/Users/DeleteUser",
+                    url: "/Medications/DeleteMedication",
                     type: "POST",
-                    data: { userId: data.Id },
+                    data: { medicationId: data.Id },
                     success: function (response) {
                         if (response.Number == 200) {
                             $("#medicationModal").modal("hide");
@@ -215,7 +218,7 @@
                                 confirmButtonText: 'OK'
                             }).then((result) => {
                                 if (result.isConfirmed) {
-                                    GetUsers();
+                                    GetMedications();
                                 }
                             });
                         } else {
@@ -309,17 +312,19 @@
     }
     function GetData() {
         $.ajax({
-            url: "/Medications/GetMedications",
+            url: "/Medications/GetMedication",
             type: "GET",
-            data: { Id: medication.Id },
+            data: { id: medication.Id },
             success: function (response) {
                 if (response.Number == 200) {
                     $("#name").val(response.Data.Name);
-                    $("#userName").val(response.Data.UserName);
-                    $("#password").val(response.Data.Password);
+                    $("#concentration").val(response.Data.Concentration);
+                    $("#presentation").val(response.Data.Presentation);
+                    $("#price").val(response.Data.price);
+                    $("#stock").val(response.Data.Stock);
                     $('#status').prop('checked', false);
-                    if (response.Data.Status != null || response.Data.Status != undefined) {
-                        if (response.Data.Status > 0)
+                    if (response.Data.Enable != null || response.Data.Enable != undefined) {
+                        if (response.Data.Enable > 0)
                             $('#status').prop('checked', true);
                     }
                     $("#medicationModal").modal("show");
@@ -335,6 +340,39 @@
                         }
                     });
                 }
+
+            },
+            error: function (response) {
+                Swal.fire({
+                    title: '¡Error!',
+                    text: response.Message,
+                    icon: 'error',
+                    confirmButtonText: 'OK'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+
+                    }
+                });
+            }
+
+        });
+    }
+    function GetCatalogs() {
+        $.ajax({
+            url: "/Medications/ListPharmaceuticalForms",
+            type: "GET",
+            success: function (response) {
+                $('#pharmaceuticalForm').empty();
+                $('#pharmaceuticalForm').append('<option value="">Seleccione una opción</option>');
+
+                $.each(response.data, function (i, item) {
+                    $('#pharmaceuticalForm').append(
+                        $('<option>', {
+                            value: item.Id,
+                            text: item.Name
+                        })
+                    );
+                });
 
             },
             error: function (response) {

@@ -277,7 +277,7 @@
         $.ajax({
             url: "/Users/GetUser",
             type: "GET",
-            data: { Id: user.Id },
+            data: { id: user.Id },
             success: function (response) {
                 if (response.Number == 200) {
                     $("#name").val(response.Data.Name);

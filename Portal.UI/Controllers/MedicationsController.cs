@@ -26,7 +26,6 @@ namespace Portal.UI.Controllers
 
             return Json(response.Data);
 
-
         }
 
         public async Task<ActionResult> GetMedication(int id)
@@ -79,7 +78,7 @@ namespace Portal.UI.Controllers
 
         }
 
-        public async Task<ActionResult> UpdateUser(MedicationModel medication)
+        public async Task<ActionResult> UpdateMedication(MedicationModel medication)
         {
             MedicationHandler handler = new MedicationHandler();
 
@@ -103,7 +102,7 @@ namespace Portal.UI.Controllers
 
         }
 
-        public async Task<ActionResult> DeleteUser(int medicationId)
+        public async Task<ActionResult> DeleteMedication(int medicationId)
         {
             MedicationHandler handler = new MedicationHandler();
 
@@ -124,7 +123,17 @@ namespace Portal.UI.Controllers
                     Number = 500
                 });
             }
+        }
+
+        public async Task<ActionResult> ListPharmaceuticalForms()
+        {
+            MedicationHandler handler = new MedicationHandler();
+
+            var response = await handler.ListPharmaceuticalForms();
+
+            return Json(response.Data, JsonRequestBehavior.AllowGet);
 
         }
+
     }
 }

@@ -100,7 +100,22 @@ namespace Portal.Business.Handler
                     Message = $"{ex.Message} {ex?.InnerException?.Message}"
                 };
             }
+        }
+
+        public async Task<RootResult<PharmaceuticalFormModel>> ListPharmaceuticalForms()
+        {
+            try
+            {
+                var service = new BaseService<PharmaceuticalFormModel>(EndPoints.ENDPOINT_MEDICATIONS);
+
+                return await service.List<PharmaceuticalFormModel>("pharmaceuticalForms");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message, ex);
+            }
 
         }
+
     }
 }

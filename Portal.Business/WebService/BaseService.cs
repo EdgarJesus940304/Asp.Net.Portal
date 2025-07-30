@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -27,6 +28,7 @@ namespace Portal.Business.WebService
 
             _endpoint = endPoint;
         }
+
         public async Task<RootResult<TResponse>> List<TResponse>(TRequest model)
         {
             try
@@ -61,6 +63,15 @@ namespace Portal.Business.WebService
 
                 try
                 {
+                    if (!response.IsSuccessStatusCode)
+                    {
+                        return new MessageResponse<TResponse>()
+                        {
+                            Message = respuestaJson,
+                            ResponseType = ResponseType.Error
+                        };
+                    }
+
                     return JsonConvert.DeserializeObject<MessageResponse<TResponse>>(respuestaJson)
                            ?? new MessageResponse<TResponse> { ResponseType = ResponseType.Error, Message = "Respuesta vacía" };
                 }
@@ -83,7 +94,6 @@ namespace Portal.Business.WebService
                 };
             }
         }
-
 
         public async Task<MessageResponse> Post(TRequest model)
         {
@@ -186,6 +196,29 @@ namespace Portal.Business.WebService
                 };
             }
         }
+
+        public async Task<RootResult<TResponse>> List<TResponse>(string catalogUrl)
+        {
+            try
+            {
+                HttpResponseMessage response = await _client.GetAsync($"{_endpoint}/{catalogUrl}");
+                string respuestaJson = await response.Content.ReadAsStringAsync();
+
+
+                if (!response.IsSuccessStatusCode)
+                    throw new Exception($"Error API: {response.StatusCode}");
+
+                var responseJson = await response.Content.ReadAsStringAsync();
+
+                return JsonConvert.DeserializeObject<RootResult<TResponse>>(responseJson);
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener datos de la API: " + ex.Message, ex);
+            }
+        }
+
 
     }
 }
