@@ -1,0 +1,1441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://WebService/" targetNamespace="http://WebService/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="AceptacionRechazoCFDI" type="tns:AceptacionRechazoCFDI" />
+  <xs:element name="AceptacionRechazoCFDIResponse" type="tns:AceptacionRechazoCFDIResponse" />
+  <xs:element name="AgregaTicket" type="tns:AgregaTicket" />
+  <xs:element name="AgregaTicketComprobante" type="tns:AgregaTicketComprobante" />
+  <xs:element name="AgregaTicketComprobanteResponse" type="tns:AgregaTicketComprobanteResponse" />
+  <xs:element name="AgregaTicketResponse" type="tns:AgregaTicketResponse" />
+  <xs:element name="CancelaCFDI" type="tns:CancelaCFDI" />
+  <xs:element name="CancelaCFDI33" type="tns:CancelaCFDI33" />
+  <xs:element name="CancelaCFDI33Response" type="tns:CancelaCFDI33Response" />
+  <xs:element name="CancelaCFDI40" type="tns:CancelaCFDI40" />
+  <xs:element name="CancelaCFDI40Response" type="tns:CancelaCFDI40Response" />
+  <xs:element name="CancelaCFDIEnc" type="tns:CancelaCFDIEnc" />
+  <xs:element name="CancelaCFDIEncResponse" type="tns:CancelaCFDIEncResponse" />
+  <xs:element name="CancelaCFDIMSJ" type="tns:CancelaCFDIMSJ" />
+  <xs:element name="CancelaCFDIMSJResponse" type="tns:CancelaCFDIMSJResponse" />
+  <xs:element name="CancelaCFDIResponse" type="tns:CancelaCFDIResponse" />
+  <xs:element name="CancelaRetencion" type="tns:CancelaRetencion" />
+  <xs:element name="CancelaRetencionEnc" type="tns:CancelaRetencionEnc" />
+  <xs:element name="CancelaRetencionEncResponse" type="tns:CancelaRetencionEncResponse" />
+  <xs:element name="CancelaRetencionPXF" type="tns:CancelaRetencionPXF" />
+  <xs:element name="CancelaRetencionPXFResponse" type="tns:CancelaRetencionPXFResponse" />
+  <xs:element name="CancelaRetencionResponse" type="tns:CancelaRetencionResponse" />
+  <xs:element name="ConsultaRFC" type="tns:ConsultaRFC" />
+  <xs:element name="ConsultaRFCResponse" type="tns:ConsultaRFCResponse" />
+  <xs:element name="ConsultarEstatus33" type="tns:ConsultarEstatus33" />
+  <xs:element name="ConsultarEstatus33Response" type="tns:ConsultarEstatus33Response" />
+  <xs:element name="ConsultarPendientes" type="tns:ConsultarPendientes" />
+  <xs:element name="ConsultarPendientesResponse" type="tns:ConsultarPendientesResponse" />
+  <xs:element name="IngresaXML" type="tns:IngresaXML" />
+  <xs:element name="IngresaXMLResponse" type="tns:IngresaXMLResponse" />
+  <xs:element name="InsertaLogR" type="tns:InsertaLogR" />
+  <xs:element name="InsertaLogRResponse" type="tns:InsertaLogRResponse" />
+  <xs:element name="ObtenerDatosCuenta" type="tns:ObtenerDatosCuenta" />
+  <xs:element name="ObtenerDatosCuentaConsumo" type="tns:ObtenerDatosCuentaConsumo" />
+  <xs:element name="ObtenerDatosCuentaConsumoResponse" type="tns:ObtenerDatosCuentaConsumoResponse" />
+  <xs:element name="ObtenerDatosCuentaResponse" type="tns:ObtenerDatosCuentaResponse" />
+  <xs:element name="ObtenerPDF" type="tns:ObtenerPDF" />
+  <xs:element name="ObtenerPDFParam" type="tns:ObtenerPDFParam" />
+  <xs:element name="ObtenerPDFParamResponse" type="tns:ObtenerPDFParamResponse" />
+  <xs:element name="ObtenerPDFResponse" type="tns:ObtenerPDFResponse" />
+  <xs:element name="ObtenerPDFRetencion" type="tns:ObtenerPDFRetencion" />
+  <xs:element name="ObtenerPDFRetencionResponse" type="tns:ObtenerPDFRetencionResponse" />
+  <xs:element name="ObtenerPDFValidacion" type="tns:ObtenerPDFValidacion" />
+  <xs:element name="ObtenerPDFValidacionParam" type="tns:ObtenerPDFValidacionParam" />
+  <xs:element name="ObtenerPDFValidacionParamResponse" type="tns:ObtenerPDFValidacionParamResponse" />
+  <xs:element name="ObtenerPDFValidacionResponse" type="tns:ObtenerPDFValidacionResponse" />
+  <xs:element name="ObtenerXML" type="tns:ObtenerXML" />
+  <xs:element name="ObtenerXMLResponse" type="tns:ObtenerXMLResponse" />
+  <xs:element name="ObtenerXMLSerieFolio" type="tns:ObtenerXMLSerieFolio" />
+  <xs:element name="ObtenerXMLSerieFolioResponse" type="tns:ObtenerXMLSerieFolioResponse" />
+  <xs:element name="ObtenerXMLUUID" type="tns:ObtenerXMLUUID" />
+  <xs:element name="ObtenerXMLUUIDResponse" type="tns:ObtenerXMLUUIDResponse" />
+  <xs:element name="RevisaListasNegrasRFC" type="tns:RevisaListasNegrasRFC" />
+  <xs:element name="RevisaListasNegrasRFCResponse" type="tns:RevisaListasNegrasRFCResponse" />
+  <xs:element name="SellaConta" type="tns:SellaConta" />
+  <xs:element name="SellaContaResponse" type="tns:SellaContaResponse" />
+  <xs:element name="TimbraComprobante" type="tns:TimbraComprobante" />
+  <xs:element name="TimbraComprobanteResponse" type="tns:TimbraComprobanteResponse" />
+  <xs:element name="TimbraNomina" type="tns:TimbraNomina" />
+  <xs:element name="TimbraNomina12" type="tns:TimbraNomina12" />
+  <xs:element name="TimbraNomina12Response" type="tns:TimbraNomina12Response" />
+  <xs:element name="TimbraNominaResponse" type="tns:TimbraNominaResponse" />
+  <xs:element name="TimbraRetencion" type="tns:TimbraRetencion" />
+  <xs:element name="TimbraRetencionResponse" type="tns:TimbraRetencionResponse" />
+  <xs:element name="TimbraXML" type="tns:TimbraXML" />
+  <xs:element name="TimbraXMLB64" type="tns:TimbraXMLB64" />
+  <xs:element name="TimbraXMLB64Response" type="tns:TimbraXMLB64Response" />
+  <xs:element name="TimbraXMLEnc" type="tns:TimbraXMLEnc" />
+  <xs:element name="TimbraXMLEncResponse" type="tns:TimbraXMLEncResponse" />
+  <xs:element name="TimbraXMLFechaTimbrado" type="tns:TimbraXMLFechaTimbrado" />
+  <xs:element name="TimbraXMLFechaTimbradoResponse" type="tns:TimbraXMLFechaTimbradoResponse" />
+  <xs:element name="TimbraXMLResponse" type="tns:TimbraXMLResponse" />
+  <xs:element name="TimbraXMLRetenciones" type="tns:TimbraXMLRetenciones" />
+  <xs:element name="TimbraXMLRetencionesResponse" type="tns:TimbraXMLRetencionesResponse" />
+  <xs:element name="ValidaComprobante" type="tns:ValidaComprobante" />
+  <xs:element name="ValidaComprobanteResponse" type="tns:ValidaComprobanteResponse" />
+  <xs:element name="ValidaDatosFiscales" type="tns:ValidaDatosFiscales" />
+  <xs:element name="ValidaDatosFiscalesResponse" type="tns:ValidaDatosFiscalesResponse" />
+  <xs:complexType name="ConsultarEstatus33">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="RFCEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="RFCReceptor" type="xs:string" />
+      <xs:element minOccurs="0" name="Total" type="xs:string" />
+      <xs:element minOccurs="0" name="UUID" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ConsultarEstatus33Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaCancelacion33" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="respuestaCancelacion33">
+    <xs:sequence>
+      <xs:element name="CancelacionExitosa" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AcuseCancelacion" type="xs:string" />
+      <xs:element minOccurs="0" name="UUID" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" type="xs:string" />
+      <xs:element minOccurs="0" name="EsCancelable" type="xs:string" />
+      <xs:element minOccurs="0" name="EstatusCancelacion" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoOperacion" type="xs:string" />
+      <xs:element minOccurs="0" name="MensajeOperacion" type="xs:string" />
+      <xs:element name="CodigoError" type="xs:int" />
+      <xs:element minOccurs="0" name="MensajeError" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TimbraXMLEnc">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="xml" type="xs:string" />
+      <xs:element minOccurs="0" name="DatosExtra" type="tns:datosExtra" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="datosExtra">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DatosAdicionales" type="xs:string" />
+      <xs:element minOccurs="0" name="Addenda" type="xs:string" />
+      <xs:element minOccurs="0" name="Complemento" type="xs:string" />
+      <xs:element minOccurs="0" name="NoCliente" type="xs:string" />
+      <xs:element minOccurs="0" name="FolioInterno" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailNomina" type="xs:string" />
+      <xs:element name="OpcBusqueda1" type="xs:int" />
+      <xs:element name="OpcBusqueda2" type="xs:int" />
+      <xs:element name="Sello" type="xs:boolean" />
+      <xs:element minOccurs="0" name="complementos" type="tns:complementos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="complementos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="complementoINE" type="tns:ine" />
+      <xs:element minOccurs="0" name="comercioExterior" type="tns:comercioExterior" />
+      <xs:element minOccurs="0" name="comercioExterior11" type="tns:comercioExterior11" />
+      <xs:element minOccurs="0" name="donatarias" type="tns:donatarias" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ine">
+    <xs:sequence>
+      <xs:element name="IncluirComplemento" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TipoProceso" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoComite" type="xs:string" />
+      <xs:element name="IdContabilidad" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="entidades" nillable="true" type="tns:entidadINE" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="entidadINE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ambito" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaveEntidad" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="IdContabilidad" nillable="true" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="comercioExterior">
+    <xs:sequence>
+      <xs:element name="IncluirComplemento" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TipoOperacion" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaveDePedimento" type="xs:string" />
+      <xs:element name="CertificadoOrigen" type="xs:int" />
+      <xs:element minOccurs="0" name="NumCertificadoOrigen" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroExportadorConfiable" type="xs:string" />
+      <xs:element minOccurs="0" name="Incoterm" type="xs:string" />
+      <xs:element name="Subdivision" type="xs:int" />
+      <xs:element minOccurs="0" name="Observaciones" type="xs:string" />
+      <xs:element name="TipoCambioUSD" type="xs:double" />
+      <xs:element name="TotalUSD" type="xs:double" />
+      <xs:element minOccurs="0" name="EmisorCURP" type="xs:string" />
+      <xs:element minOccurs="0" name="ReceptorCURP" type="xs:string" />
+      <xs:element minOccurs="0" name="NumRegIdTrib" type="xs:string" />
+      <xs:element minOccurs="0" name="destinatario" type="tns:destinatarioComercioExterior" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="mercancias" nillable="true" type="tns:mercanciaComercioExterior" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="destinatarioComercioExterior">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NumRegIdTrib" type="xs:string" />
+      <xs:element minOccurs="0" name="RFC" type="xs:string" />
+      <xs:element minOccurs="0" name="CURP" type="xs:string" />
+      <xs:element minOccurs="0" name="Nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="Calle" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroExterior" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroInterior" type="xs:string" />
+      <xs:element minOccurs="0" name="Colonia" type="xs:string" />
+      <xs:element minOccurs="0" name="Localidad" type="xs:string" />
+      <xs:element minOccurs="0" name="Referencia" type="xs:string" />
+      <xs:element minOccurs="0" name="Municipio" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" type="xs:string" />
+      <xs:element minOccurs="0" name="Pais" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoPostal" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="mercanciaComercioExterior">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NoIdentificacion" type="xs:string" />
+      <xs:element minOccurs="0" name="FraccionArancelaria" type="xs:string" />
+      <xs:element name="CantidadAduana" type="xs:double" />
+      <xs:element minOccurs="0" name="UnidadAduana" type="xs:string" />
+      <xs:element name="ValorUnitarioAduana" type="xs:double" />
+      <xs:element name="ValorDolares" type="xs:double" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="descripcionesEspecificas" nillable="true" type="tns:descripcionEspecificaComercioExterior" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="descripcionEspecificaComercioExterior">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Marca" type="xs:string" />
+      <xs:element minOccurs="0" name="Modelo" type="xs:string" />
+      <xs:element minOccurs="0" name="SubModelo" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroSerie" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="comercioExterior11">
+    <xs:sequence>
+      <xs:element name="IncluirComplemento" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TipoOperacion" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaveDePedimento" type="xs:string" />
+      <xs:element name="CertificadoOrigen" type="xs:int" />
+      <xs:element minOccurs="0" name="NumCertificadoOrigen" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroExportadorConfiable" type="xs:string" />
+      <xs:element minOccurs="0" name="Incoterm" type="xs:string" />
+      <xs:element name="Subdivision" type="xs:int" />
+      <xs:element minOccurs="0" name="Observaciones" type="xs:string" />
+      <xs:element name="TipoCambioUSD" type="xs:double" />
+      <xs:element name="TotalUSD" type="xs:double" />
+      <xs:element minOccurs="0" name="EmisorCURP" type="xs:string" />
+      <xs:element minOccurs="0" name="NumRegIdTrib" type="xs:string" />
+      <xs:element minOccurs="0" name="MotivoTraslado" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="destinatarios" nillable="true" type="tns:destinatarioComercioExterior" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="mercancias" nillable="true" type="tns:mercanciaComercioExterior" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="donatarias">
+    <xs:sequence>
+      <xs:element name="IncluirComplemento" type="xs:boolean" />
+      <xs:element minOccurs="0" name="FechaAutorizacion" type="xs:string" />
+      <xs:element minOccurs="0" name="NoAutorizacion" type="xs:string" />
+      <xs:element minOccurs="0" name="Leyenda" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TimbraXMLEncResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaTimbrado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="respuestaTimbrado">
+    <xs:sequence>
+      <xs:element name="Exitoso" type="xs:boolean" />
+      <xs:element minOccurs="0" name="XMLTimbrado" type="xs:string" />
+      <xs:element minOccurs="0" name="TFD" type="xs:string" />
+      <xs:element minOccurs="0" name="UUID" type="xs:string" />
+      <xs:element name="CodigoError" type="xs:int" />
+      <xs:element minOccurs="0" name="MensajeError" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CancelaCFDIMSJ">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="RFCEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="UUID" type="xs:string" />
+      <xs:element minOccurs="0" name="Certificado" type="tns:certificado" />
+      <xs:element minOccurs="0" name="datosExtra" type="tns:datosExtraCancelacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="certificado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CertificadoSelloDigital" type="xs:string" />
+      <xs:element minOccurs="0" name="LlavePrivada" type="xs:string" />
+      <xs:element minOccurs="0" name="PasswordLlavePrivada" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="datosExtraCancelacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DatosAdicionales" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" type="xs:string" />
+      <xs:element minOccurs="0" name="UUIDRelacionado" type="xs:string" />
+      <xs:element name="MotivoCancelacion" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CancelaCFDIMSJResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaCancelacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="respuestaCancelacion">
+    <xs:sequence>
+      <xs:element name="CancelacionExitosa" type="xs:boolean" />
+      <xs:element minOccurs="0" name="AcuseCancelacion" type="xs:string" />
+      <xs:element minOccurs="0" name="UUID" type="xs:string" />
+      <xs:element name="CodigoError" type="xs:int" />
+      <xs:element minOccurs="0" name="MensajeError" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerPDFValidacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="uuid" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerPDFValidacionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaPDF" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="respuestaPDF">
+    <xs:sequence>
+      <xs:element name="Exitoso" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PDF" type="xs:base64Binary" />
+      <xs:element name="CodigoError" type="xs:int" />
+      <xs:element minOccurs="0" name="MensajeError" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TimbraRetencion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="DatosRetencion" type="tns:datosRetencion" />
+      <xs:element minOccurs="0" name="Emisor" type="tns:emisorRetencion" />
+      <xs:element minOccurs="0" name="Receptor" type="tns:receptorRetencion" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Retenciones" type="tns:impuestoRetencion" />
+      <xs:element minOccurs="0" name="Complementos" type="tns:complementosRetenciones" />
+      <xs:element minOccurs="0" name="Certificado" type="tns:certificado" />
+      <xs:element minOccurs="0" name="DatosExtra" type="tns:datosExtra" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="datosRetencion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FechaExpedicion" type="xs:string" />
+      <xs:element name="Folio" type="xs:int" />
+      <xs:element minOccurs="0" name="FolioS" type="xs:string" />
+      <xs:element name="ClaveRetenciones" type="xs:int" />
+      <xs:element minOccurs="0" name="DescripcionRetencion" type="xs:string" />
+      <xs:element minOccurs="0" name="LugarExpRetenc" type="xs:string" />
+      <xs:element name="MesInicial" type="xs:int" />
+      <xs:element name="MesFin" type="xs:int" />
+      <xs:element name="Ejercicio" type="xs:int" />
+      <xs:element name="MontoTotalOperacion" type="xs:double" />
+      <xs:element name="MontoTotalGravado" type="xs:double" />
+      <xs:element name="MontoTotalExcento" type="xs:double" />
+      <xs:element name="MontoTotalRetenciones" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="emisorRetencion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RFC" type="xs:string" />
+      <xs:element minOccurs="0" name="RazonSocial" type="xs:string" />
+      <xs:element minOccurs="0" name="CURP" type="xs:string" />
+      <xs:element minOccurs="0" name="RegimenFiscal" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="receptorRetencion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RFC" type="xs:string" />
+      <xs:element minOccurs="0" name="RazonSocial" type="xs:string" />
+      <xs:element minOccurs="0" name="CURP" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroRegistroIdentificacion" type="xs:string" />
+      <xs:element minOccurs="0" name="DomicilioFiscal" type="xs:string" />
+      <xs:element name="EsNacional" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="impuestoRetencion">
+    <xs:sequence>
+      <xs:element name="BaseRetencion" type="xs:double" />
+      <xs:element name="Impuesto" type="xs:int" />
+      <xs:element name="MontoRetencion" type="xs:double" />
+      <xs:element minOccurs="0" name="TipoPagoRetencion" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="complementosRetenciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="enajenaciondeAcciones" type="tns:enajenacionDeAcciones" />
+      <xs:element minOccurs="0" name="dividendos" type="tns:dividendos" />
+      <xs:element minOccurs="0" name="intereses" type="tns:intereses" />
+      <xs:element minOccurs="0" name="ArrendamientoenFideicomiso" type="tns:arrendamientoEnFideicomiso" />
+      <xs:element minOccurs="0" name="PagosaExtranjeros" type="tns:pagosAExtranjeros" />
+      <xs:element minOccurs="0" name="premios" type="tns:premios" />
+      <xs:element minOccurs="0" name="fideicomisoNoEmpresarial" type="tns:fideicomisoNoEmpresarial" />
+      <xs:element minOccurs="0" name="planesdeRetiro" type="tns:planesDeRetiro" />
+      <xs:element minOccurs="0" name="interesesHipotecarios" type="tns:interesesHipotecarios" />
+      <xs:element minOccurs="0" name="operacionesDerivados" type="tns:operacionesConDerivados" />
+      <xs:element minOccurs="0" name="sectorFinanciero" type="tns:sectorFinanciero" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="enajenacionDeAcciones">
+    <xs:sequence>
+      <xs:element name="IncluirComplemento" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ContratoIntermediacion" type="xs:string" />
+      <xs:element name="Ganancia" type="xs:double" />
+      <xs:element name="Perdida" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="dividendos">
+    <xs:sequence>
+      <xs:element name="IncluirComplemento" type="xs:boolean" />
+      <xs:element name="Clave" type="xs:int" />
+      <xs:element name="MontoRetencionNacional" type="xs:double" />
+      <xs:element name="MontoRetencionExtranjero" type="xs:double" />
+      <xs:element name="MontoDividendoExtranjero" type="xs:double" />
+      <xs:element minOccurs="0" name="TipoDividendo" type="xs:string" />
+      <xs:element name="MontoISRNacional" type="xs:double" />
+      <xs:element name="DividendoAcumulableNacional" type="xs:double" />
+      <xs:element name="DividendoAcumulableExtranjero" type="xs:double" />
+      <xs:element name="ProporcionRem" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="intereses">
+    <xs:sequence>
+      <xs:element name="IncluirComplemento" type="xs:boolean" />
+      <xs:element name="SistemaFinanciero" type="xs:boolean" />
+      <xs:element name="RetiroIntereses" type="xs:boolean" />
+      <xs:element name="OperacionesFinancieras" type="xs:boolean" />
+      <xs:element name="InteresNominal" type="xs:double" />
+      <xs:element name="InteresReal" type="xs:double" />
+      <xs:element name="Perdida" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="arrendamientoEnFideicomiso">
+    <xs:sequence>
+      <xs:element name="IncluirComplemento" type="xs:boolean" />
+      <xs:element name="PagoFiduciario" type="xs:double" />
+      <xs:element name="Rendimiento" type="xs:double" />
+      <xs:element name="Deducciones" type="xs:double" />
+      <xs:element name="MontoRetencion" type="xs:double" />
+      <xs:element name="MontoFibras" type="xs:double" />
+      <xs:element name="MontoOtrosConceptos" type="xs:double" />
+      <xs:element minOccurs="0" name="DesripcionMontoOtrosConceptos" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pagosAExtranjeros">
+    <xs:sequence>
+      <xs:element name="IncluirComplemento" type="xs:boolean" />
+      <xs:element name="EsBeneficiario" type="xs:boolean" />
+      <xs:element minOccurs="0" name="PaisResidencia" type="xs:string" />
+      <xs:element name="ConceptoPago" type="xs:int" />
+      <xs:element minOccurs="0" name="DescripcionConcepto" type="xs:string" />
+      <xs:element minOccurs="0" name="RFC" type="xs:string" />
+      <xs:element minOccurs="0" name="CURP" type="xs:string" />
+      <xs:element minOccurs="0" name="RazonSocial" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="premios">
+    <xs:sequence>
+      <xs:element name="IncluirComplemento" type="xs:boolean" />
+      <xs:element name="EntidadFederativa" type="xs:int" />
+      <xs:element name="MontoTotalPago" type="xs:double" />
+      <xs:element name="MontoTotalPagoGravado" type="xs:double" />
+      <xs:element name="MontoTotalPagoExento" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="fideicomisoNoEmpresarial">
+    <xs:sequence>
+      <xs:element name="IncluirComplemento" type="xs:boolean" />
+      <xs:element name="MontoIngresos" type="xs:double" />
+      <xs:element name="ProporcionIngresos" type="xs:double" />
+      <xs:element name="ProporcionParticipacionIngresos" type="xs:double" />
+      <xs:element minOccurs="0" name="ConceptoIngresos" type="xs:string" />
+      <xs:element name="MontoEgresos" type="xs:double" />
+      <xs:element name="ProporcionDeducciones" type="xs:double" />
+      <xs:element name="ProporcionParticipacionEgresos" type="xs:double" />
+      <xs:element minOccurs="0" name="ConceptoDeducciones" type="xs:string" />
+      <xs:element name="MontoRetencion" type="xs:double" />
+      <xs:element minOccurs="0" name="DescripcionRetencion" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="planesDeRetiro">
+    <xs:sequence>
+      <xs:element name="IncluirComplemento" type="xs:boolean" />
+      <xs:element name="SistemaFinanciero" type="xs:boolean" />
+      <xs:element name="MontoAportaciones" type="xs:double" />
+      <xs:element name="MontoIntereses" type="xs:double" />
+      <xs:element name="RetiroRecursosYRendimientos" type="xs:boolean" />
+      <xs:element name="MontoRetiro" type="xs:double" />
+      <xs:element name="MontoExento" type="xs:double" />
+      <xs:element name="MontoExcedente" type="xs:double" />
+      <xs:element name="RetiroInmediato" type="xs:boolean" />
+      <xs:element name="MontoRetiroInmediato" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="interesesHipotecarios">
+    <xs:sequence>
+      <xs:element name="IncluirComplemento" type="xs:boolean" />
+      <xs:element name="CreditoDeInstitucion" type="xs:boolean" />
+      <xs:element name="SaldoInsoluto" type="xs:double" />
+      <xs:element name="DeducibleDelCredito" type="xs:double" />
+      <xs:element name="MontoInteresesNominalesDevegados" type="xs:double" />
+      <xs:element name="MontoInteresesNominalesDevegadosYPagados" type="xs:double" />
+      <xs:element name="MontoInteresesReales" type="xs:double" />
+      <xs:element minOccurs="0" name="NumeroDeContrato" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="operacionesConDerivados">
+    <xs:sequence>
+      <xs:element name="IncluirComplemento" type="xs:boolean" />
+      <xs:element name="MontoGanancia" type="xs:double" />
+      <xs:element name="MontoPerdida" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sectorFinanciero">
+    <xs:sequence>
+      <xs:element name="IncluirComplemento" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NumeroFideiComiso" type="xs:string" />
+      <xs:element minOccurs="0" name="NombreFideiComiso" type="xs:string" />
+      <xs:element minOccurs="0" name="DescripcionFideiComiso" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TimbraRetencionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaTimbrado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CancelaCFDI">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="RFCEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="UUID" type="xs:string" />
+      <xs:element minOccurs="0" name="Certificado" type="tns:certificado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CancelaCFDIResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaCancelacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AgregaTicketComprobante">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="Comprobante" type="tns:comprobante" />
+      <xs:element minOccurs="0" name="Emisor" type="tns:emisor" />
+      <xs:element minOccurs="0" name="Receptor" type="tns:receptor" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Conceptos" type="tns:concepto" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Impuestos" type="tns:impuesto" />
+      <xs:element minOccurs="0" name="datosTicket" type="tns:datosTicket" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="comprobante">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TipodeComprobante" type="xs:string" />
+      <xs:element minOccurs="0" name="FormadePago" type="xs:string" />
+      <xs:element minOccurs="0" name="MetododePago" type="xs:string" />
+      <xs:element minOccurs="0" name="Serie" type="xs:string" />
+      <xs:element name="Folio" type="xs:int" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:string" />
+      <xs:element name="Subtotal" type="xs:double" />
+      <xs:element name="Total" type="xs:double" />
+      <xs:element name="Descuento" type="xs:double" />
+      <xs:element minOccurs="0" name="MotivoDescuento" type="xs:string" />
+      <xs:element minOccurs="0" name="Moneda" type="xs:string" />
+      <xs:element name="TipoCambio" type="xs:double" />
+      <xs:element minOccurs="0" name="CondicionesDePago" type="xs:string" />
+      <xs:element minOccurs="0" name="LugarDeExpedicion" type="xs:string" />
+      <xs:element minOccurs="0" name="Cuenta" type="xs:string" />
+      <xs:element minOccurs="0" name="FolioFiscalOriginal" type="xs:string" />
+      <xs:element minOccurs="0" name="SerieFolioFiscalOriginal" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaFolioFiscalOriginal" type="xs:string" />
+      <xs:element name="MontoFolioFiscalOriginal" type="xs:double" />
+      <xs:element minOccurs="0" name="FolioS" type="xs:string" />
+      <xs:element name="IvaExento" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="emisor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RFC" type="xs:string" />
+      <xs:element minOccurs="0" name="RazonSocial" type="xs:string" />
+      <xs:element minOccurs="0" name="RegimenFiscal" type="xs:string" />
+      <xs:element minOccurs="0" name="Calle" type="xs:string" />
+      <xs:element minOccurs="0" name="NumExt" type="xs:string" />
+      <xs:element minOccurs="0" name="NumInt" type="xs:string" />
+      <xs:element minOccurs="0" name="Colonia" type="xs:string" />
+      <xs:element minOccurs="0" name="Municipio" type="xs:string" />
+      <xs:element minOccurs="0" name="Referencia" type="xs:string" />
+      <xs:element minOccurs="0" name="Ciudad" type="xs:string" />
+      <xs:element minOccurs="0" name="CP" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" type="xs:string" />
+      <xs:element minOccurs="0" name="Pais" type="xs:string" />
+      <xs:element minOccurs="0" name="suc_Calle" type="xs:string" />
+      <xs:element minOccurs="0" name="suc_NumExt" type="xs:string" />
+      <xs:element minOccurs="0" name="suc_NumInt" type="xs:string" />
+      <xs:element minOccurs="0" name="suc_Colonia" type="xs:string" />
+      <xs:element minOccurs="0" name="suc_Ciudad" type="xs:string" />
+      <xs:element minOccurs="0" name="suc_Municipio" type="xs:string" />
+      <xs:element minOccurs="0" name="suc_CP" type="xs:string" />
+      <xs:element minOccurs="0" name="suc_Estado" type="xs:string" />
+      <xs:element minOccurs="0" name="suc_Pais" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="receptor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RFC" type="xs:string" />
+      <xs:element minOccurs="0" name="RazonSocial" type="xs:string" />
+      <xs:element minOccurs="0" name="Calle" type="xs:string" />
+      <xs:element minOccurs="0" name="NumExt" type="xs:string" />
+      <xs:element minOccurs="0" name="NumInt" type="xs:string" />
+      <xs:element minOccurs="0" name="Colonia" type="xs:string" />
+      <xs:element minOccurs="0" name="Municipio" type="xs:string" />
+      <xs:element minOccurs="0" name="Referencia" type="xs:string" />
+      <xs:element minOccurs="0" name="Ciudad" type="xs:string" />
+      <xs:element minOccurs="0" name="CP" type="xs:string" />
+      <xs:element minOccurs="0" name="Estado" type="xs:string" />
+      <xs:element minOccurs="0" name="Pais" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="concepto">
+    <xs:sequence>
+      <xs:element name="Cantidad" type="xs:double" />
+      <xs:element minOccurs="0" name="Unidad" type="xs:string" />
+      <xs:element minOccurs="0" name="NoIdentificacion" type="xs:string" />
+      <xs:element minOccurs="0" name="Descripcion" type="xs:string" />
+      <xs:element name="Precio" type="xs:double" />
+      <xs:element name="Importe" type="xs:double" />
+      <xs:element minOccurs="0" name="NumDocAduanero" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaAduanera" type="xs:string" />
+      <xs:element minOccurs="0" name="Aduana" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaPredial" type="xs:string" />
+      <xs:element minOccurs="0" name="complementosConcepto" type="tns:complementosConcepto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="complementosConcepto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="complementoEducativo" type="tns:educativo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="educativo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="NombreAlumno" type="xs:string" />
+      <xs:element minOccurs="0" name="CURP" type="xs:string" />
+      <xs:element minOccurs="0" name="NivelEducativo" type="xs:string" />
+      <xs:element minOccurs="0" name="AutRVOE" type="xs:string" />
+      <xs:element minOccurs="0" name="RFCPago" type="xs:string" />
+      <xs:element name="IncluirComplemento" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="impuesto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="Tipo" type="xs:string" />
+      <xs:element name="Tasa" type="xs:double" />
+      <xs:element name="Importe" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="datosTicket">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DatosAdicionales" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroTicket" type="xs:string" />
+      <xs:element minOccurs="0" name="OpcBusqueda1" type="xs:string" />
+      <xs:element minOccurs="0" name="NumeroCliente" type="xs:string" />
+      <xs:element name="TotalTicket" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AgregaTicketComprobanteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaTicket" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="respuestaTicket">
+    <xs:sequence>
+      <xs:element name="Exitoso" type="xs:boolean" />
+      <xs:element minOccurs="0" name="NumeroTicket" type="xs:string" />
+      <xs:element name="CodigoError" type="xs:int" />
+      <xs:element minOccurs="0" name="MensajeError" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TimbraNomina12">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="Comprobante" type="tns:nomina12" />
+      <xs:element minOccurs="0" name="Emisor" type="tns:emisor" />
+      <xs:element minOccurs="0" name="Receptor" type="tns:empleado12" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Percepciones" type="tns:percepcion12" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Deducciones" type="tns:deduccion12" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OtrosPagos" type="tns:otroPago" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Incapacidades" type="tns:incapacidad12" />
+      <xs:element minOccurs="0" name="Certificado" type="tns:certificado" />
+      <xs:element minOccurs="0" name="DatosExtra" type="tns:datosExtra" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="nomina12">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Version" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CFDIRelacionados" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoRelacion" type="xs:string" />
+      <xs:element minOccurs="0" name="Serie" type="xs:string" />
+      <xs:element name="Folio" type="xs:int" />
+      <xs:element minOccurs="0" name="FolioS" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:string" />
+      <xs:element name="Subtotal" type="xs:double" />
+      <xs:element name="Total" type="xs:double" />
+      <xs:element name="Descuento" type="xs:double" />
+      <xs:element minOccurs="0" name="LugarDeExpedicion" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaPago" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaInicialPago" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaFinalPago" type="xs:string" />
+      <xs:element name="NumDiasPagados" type="xs:double" />
+      <xs:element minOccurs="0" name="Antiguedad" type="xs:string" />
+      <xs:element minOccurs="0" name="Concepto" type="xs:string" />
+      <xs:element name="TotalPercepcionGravado" type="xs:double" />
+      <xs:element name="TotalPercepcionExcento" type="xs:double" />
+      <xs:element name="TotalSeparacionIndemnizacion" type="xs:double" />
+      <xs:element name="TotalJubilacionPensionRetiro" type="xs:double" />
+      <xs:element name="TotalOtrasDeducciones" type="xs:double" />
+      <xs:element name="TotalImpuestosRetenidos" type="xs:double" />
+      <xs:element minOccurs="0" name="TipoNomina" type="xs:string" />
+      <xs:element name="TotalPercepciones" type="xs:double" />
+      <xs:element name="TotalDeducciones" type="xs:double" />
+      <xs:element name="TotalOtrosPagos" type="xs:double" />
+      <xs:element name="TotalSueldos" type="xs:double" />
+      <xs:element minOccurs="0" name="CURPEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="RegistroPatronal" type="xs:string" />
+      <xs:element minOccurs="0" name="RFCPatronOrigen" type="xs:string" />
+      <xs:element minOccurs="0" name="OrigenRecurso" type="xs:string" />
+      <xs:element name="MontoRecursoPropio" type="xs:double" />
+      <xs:element minOccurs="0" name="jubilacion" type="tns:jubilacionPensionRetiro" />
+      <xs:element minOccurs="0" name="indemnizacion" type="tns:separacionIndemnizacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="jubilacionPensionRetiro">
+    <xs:sequence>
+      <xs:element name="TotalUnaExhibicion" type="xs:double" />
+      <xs:element name="TotalParcialidad" type="xs:double" />
+      <xs:element name="MontoDiario" type="xs:double" />
+      <xs:element name="IngresoAcumulable" type="xs:double" />
+      <xs:element name="IngresoNoAcumulable" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="separacionIndemnizacion">
+    <xs:sequence>
+      <xs:element name="TotalPagado" type="xs:double" />
+      <xs:element name="NumAniosServicio" type="xs:int" />
+      <xs:element name="UltimoSueldoMensOrdinario" type="xs:double" />
+      <xs:element name="IngresoAcumulable" type="xs:double" />
+      <xs:element name="IngresoNoAcumulable" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="empleado12">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RFC" type="xs:string" />
+      <xs:element minOccurs="0" name="RazonSocial" type="xs:string" />
+      <xs:element minOccurs="0" name="NumEmpleado" type="xs:string" />
+      <xs:element minOccurs="0" name="CURP" type="xs:string" />
+      <xs:element name="TipoRegimen" type="xs:int" />
+      <xs:element minOccurs="0" name="NumSeguroSocial" type="xs:string" />
+      <xs:element minOccurs="0" name="Departamento" type="xs:string" />
+      <xs:element minOccurs="0" name="CLABE" type="xs:string" />
+      <xs:element name="Banco" type="xs:int" />
+      <xs:element minOccurs="0" name="FechaInicioRelLaboral" type="xs:string" />
+      <xs:element minOccurs="0" name="Puesto" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoContrato" type="xs:string" />
+      <xs:element minOccurs="0" name="TipoJornada" type="xs:string" />
+      <xs:element minOccurs="0" name="PeriodicidadPago" type="xs:string" />
+      <xs:element name="SalarioBaseCorApor" type="xs:double" />
+      <xs:element name="RiesgoPuesto" type="xs:int" />
+      <xs:element name="SalarioDiarioIntegrado" type="xs:double" />
+      <xs:element minOccurs="0" name="Sindicalizado" type="xs:string" />
+      <xs:element minOccurs="0" name="CuentaBancaria" type="xs:string" />
+      <xs:element minOccurs="0" name="ClaveEntidadFederativa" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="subcontrataciones" nillable="true" type="tns:subContratacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="subContratacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="RFCLabora" type="xs:string" />
+      <xs:element name="PorcentajeTiempo" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="percepcion12">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Concepto" type="xs:string" />
+      <xs:element minOccurs="0" name="Clave" type="xs:string" />
+      <xs:element name="TipoPercepcion" type="xs:int" />
+      <xs:element name="ImporteGravado" type="xs:double" />
+      <xs:element name="ImporteExento" type="xs:double" />
+      <xs:element name="ValorMercado" type="xs:double" />
+      <xs:element name="PrecioAlOtorgarse" type="xs:double" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="horasExtra" nillable="true" type="tns:horaExtra" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="horaExtra">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TipoHoras" type="xs:string" />
+      <xs:element name="Dias" type="xs:double" />
+      <xs:element name="HorasExtra" type="xs:double" />
+      <xs:element name="ImportePagado" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deduccion12">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Concepto" type="xs:string" />
+      <xs:element minOccurs="0" name="Clave" type="xs:string" />
+      <xs:element name="TipoDeduccion" type="xs:int" />
+      <xs:element name="Importe" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="otroPago">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="TipoOtroPago" type="xs:string" />
+      <xs:element minOccurs="0" name="Clave" type="xs:string" />
+      <xs:element minOccurs="0" name="Concepto" type="xs:string" />
+      <xs:element name="Importe" type="xs:double" />
+      <xs:element name="SubsidioCausado" type="xs:double" />
+      <xs:element name="SaldoAFavor" type="xs:double" />
+      <xs:element name="Anio" type="xs:int" />
+      <xs:element name="RemanenteSaldoAFavor" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="incapacidad12">
+    <xs:sequence>
+      <xs:element name="DiasIncapacidad" type="xs:double" />
+      <xs:element name="TipoIncapacidad" type="xs:int" />
+      <xs:element name="Importe" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TimbraNomina12Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaTimbrado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ValidaDatosFiscales">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="RFC" type="xs:string" />
+      <xs:element minOccurs="0" name="RazonSocial" type="xs:string" />
+      <xs:element minOccurs="0" name="RegimenFiscal" type="xs:string" />
+      <xs:element minOccurs="0" name="CodigoPostal" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ValidaDatosFiscalesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaValidacionDatos" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="respuestaValidacionDatos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Mensaje" type="xs:string" />
+      <xs:element name="DatosCorrectos" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TimbraComprobante">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="Comprobante" type="tns:comprobante" />
+      <xs:element minOccurs="0" name="Emisor" type="tns:emisor" />
+      <xs:element minOccurs="0" name="Receptor" type="tns:receptor" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Conceptos" type="tns:concepto" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Impuestos" type="tns:impuesto" />
+      <xs:element minOccurs="0" name="Certificado" type="tns:certificado" />
+      <xs:element minOccurs="0" name="DatosExtra" type="tns:datosExtra" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TimbraComprobanteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaTimbrado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TimbraNomina">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="Comprobante" type="tns:nomina" />
+      <xs:element minOccurs="0" name="Emisor" type="tns:emisor" />
+      <xs:element minOccurs="0" name="Receptor" type="tns:empleado" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Percepciones" type="tns:percepcion" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Deducciones" type="tns:deduccion" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HoraExtra" type="tns:horaExtra" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Incapacidades" type="tns:incapacidad" />
+      <xs:element minOccurs="0" name="Certificado" type="tns:certificado" />
+      <xs:element minOccurs="0" name="DatosExtra" type="tns:datosExtra" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="nomina">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FormadePago" type="xs:string" />
+      <xs:element minOccurs="0" name="MetododePago" type="xs:string" />
+      <xs:element minOccurs="0" name="Serie" type="xs:string" />
+      <xs:element name="Folio" type="xs:int" />
+      <xs:element minOccurs="0" name="FolioS" type="xs:string" />
+      <xs:element minOccurs="0" name="Fecha" type="xs:string" />
+      <xs:element name="Subtotal" type="xs:double" />
+      <xs:element name="Total" type="xs:double" />
+      <xs:element name="Descuento" type="xs:double" />
+      <xs:element minOccurs="0" name="MotivoDescuento" type="xs:string" />
+      <xs:element minOccurs="0" name="Moneda" type="xs:string" />
+      <xs:element name="TipoCambio" type="xs:double" />
+      <xs:element minOccurs="0" name="CondicionesDePago" type="xs:string" />
+      <xs:element minOccurs="0" name="LugarDeExpedicion" type="xs:string" />
+      <xs:element minOccurs="0" name="Cuenta" type="xs:string" />
+      <xs:element minOccurs="0" name="RegistroPatronal" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaPago" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaInicialPago" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaFinalPago" type="xs:string" />
+      <xs:element name="NumDiasPagados" type="xs:double" />
+      <xs:element name="Antiguedad" type="xs:int" />
+      <xs:element minOccurs="0" name="Concepto" type="xs:string" />
+      <xs:element name="TotalPercepcionGravado" type="xs:double" />
+      <xs:element name="TotalPercepcionExcento" type="xs:double" />
+      <xs:element name="TotalDeduccionGravado" type="xs:double" />
+      <xs:element name="TotalDeduccionExcento" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="empleado">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:receptor">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="NumEmpleado" type="xs:string" />
+          <xs:element minOccurs="0" name="CURP" type="xs:string" />
+          <xs:element name="TipoRegimen" type="xs:int" />
+          <xs:element minOccurs="0" name="NumSeguroSocial" type="xs:string" />
+          <xs:element minOccurs="0" name="Departamento" type="xs:string" />
+          <xs:element minOccurs="0" name="CLABE" type="xs:string" />
+          <xs:element name="Banco" type="xs:int" />
+          <xs:element minOccurs="0" name="FechaInicioRelLaboral" type="xs:string" />
+          <xs:element minOccurs="0" name="Puesto" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoContrato" type="xs:string" />
+          <xs:element minOccurs="0" name="TipoJornada" type="xs:string" />
+          <xs:element minOccurs="0" name="PeriodicidadPago" type="xs:string" />
+          <xs:element name="SalarioBaseCorApor" type="xs:double" />
+          <xs:element name="RiesgoPuesto" type="xs:int" />
+          <xs:element name="SalarioDiarioIntegrado" type="xs:double" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="percepcion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Concepto" type="xs:string" />
+      <xs:element minOccurs="0" name="Clave" type="xs:string" />
+      <xs:element name="TipoPercepcion" type="xs:int" />
+      <xs:element name="ImporteGravado" type="xs:double" />
+      <xs:element name="ImporteExento" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="deduccion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Concepto" type="xs:string" />
+      <xs:element minOccurs="0" name="Clave" type="xs:string" />
+      <xs:element name="TipoDeduccion" type="xs:int" />
+      <xs:element name="ImporteGravado" type="xs:double" />
+      <xs:element name="ImporteExento" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="incapacidad">
+    <xs:sequence>
+      <xs:element name="DiasIncapacidad" type="xs:double" />
+      <xs:element name="TipoIncapacidad" type="xs:int" />
+      <xs:element name="Descuento" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TimbraNominaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaTimbrado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AceptacionRechazoCFDI">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="RFCConsulta" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="aceptados" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="rechazados" type="xs:string" />
+      <xs:element minOccurs="0" name="Certificado" type="tns:certificado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AceptacionRechazoCFDIResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaAceptacionRechazo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="respuestaAceptacionRechazo">
+    <xs:sequence>
+      <xs:element name="PeticionRealizada" type="xs:boolean" />
+      <xs:element name="CodigoOperacion" type="xs:int" />
+      <xs:element minOccurs="0" name="MensajeOperacion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="arreglo" nillable="true" type="tns:cfdiAceptacionRechazo" />
+      <xs:element name="CodigoError" type="xs:int" />
+      <xs:element minOccurs="0" name="MensajeError" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cfdiAceptacionRechazo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="UUID" type="xs:string" />
+      <xs:element name="Codigo" type="xs:int" />
+      <xs:element minOccurs="0" name="Mensaje" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TimbraXML">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="xml" type="xs:string" />
+      <xs:element minOccurs="0" name="DatosExtra" type="tns:datosExtra" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TimbraXMLResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaTimbrado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CancelaCFDI40">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="RFCEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="RFCReceptor" type="xs:string" />
+      <xs:element minOccurs="0" name="Total" type="xs:string" />
+      <xs:element minOccurs="0" name="UUID" type="xs:string" />
+      <xs:element name="MotivoCancelacion" type="xs:int" />
+      <xs:element minOccurs="0" name="UUIDRelacionado" type="xs:string" />
+      <xs:element minOccurs="0" name="Certificado" type="tns:certificado" />
+      <xs:element minOccurs="0" name="DatosExtraCancelacion" type="tns:datosExtraCancelacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CancelaCFDI40Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaCancelacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerDatosCuenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerDatosCuentaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaDatosCuenta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="respuestaDatosCuenta">
+    <xs:sequence>
+      <xs:element name="RevisionExitosa" type="xs:boolean" />
+      <xs:element name="TimbresDisponibles" type="xs:int" />
+      <xs:element name="StatusCuenta" type="xs:int" />
+      <xs:element name="CodigoError" type="xs:int" />
+      <xs:element minOccurs="0" name="MensajeError" type="xs:string" />
+      <xs:element name="Consumo" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IngresaXML">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="xml" type="xs:string" />
+      <xs:element minOccurs="0" name="DatosExtra" type="tns:datosExtra" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IngresaXMLResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaTimbrado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerPDFRetencion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="uuid" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerPDFRetencionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaPDF" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerPDFValidacionParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="uuid" type="xs:string" />
+      <xs:element minOccurs="0" name="Parametro" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerPDFValidacionParamResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaPDF" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ConsultaRFC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="RFC" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ConsultaRFCResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaConsultaRFC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="respuestaConsultaRFC">
+    <xs:sequence>
+      <xs:element name="ExisteRFC" type="xs:boolean" />
+      <xs:element name="SNCF" type="xs:boolean" />
+      <xs:element name="Subcontratacion" type="xs:boolean" />
+      <xs:element name="ConsultaRealizada" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MensajeError" type="xs:string" />
+      <xs:element name="CodigoError" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CancelaRetencionPXF">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="RFCEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="UUID" type="xs:string" />
+      <xs:element minOccurs="0" name="passpfx" type="xs:string" />
+      <xs:element minOccurs="0" name="archivoPFX" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="Certificado" type="tns:certificado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CancelaRetencionPXFResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaCancelacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CancelaRetencionEnc">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="RFCEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="UUID" type="xs:string" />
+      <xs:element minOccurs="0" name="CertPem" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="KeyEnc" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CancelaRetencionEncResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaCancelacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerPDF">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="uuid" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerPDFResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaPDF" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerPDFParam">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="uuid" type="xs:string" />
+      <xs:element minOccurs="0" name="Parametro" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerPDFParamResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaPDF" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AgregaTicket">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="xml" type="xs:string" />
+      <xs:element minOccurs="0" name="datosTicket" type="tns:datosTicket" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AgregaTicketResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaTicket" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerDatosCuentaConsumo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element name="Mes" type="xs:int" />
+      <xs:element name="Anio" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerDatosCuentaConsumoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaDatosCuenta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ConsultarPendientes">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="RFCConsulta" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ConsultarPendientesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaConsultaPendientes" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="respuestaConsultaPendientes">
+    <xs:sequence>
+      <xs:element name="ConsultaExitosa" type="xs:boolean" />
+      <xs:element name="CodigoOperacion" type="xs:int" />
+      <xs:element minOccurs="0" name="MensajeOperacion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="listaUUID" nillable="true" type="xs:string" />
+      <xs:element name="CodigoError" type="xs:int" />
+      <xs:element minOccurs="0" name="MensajeError" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ValidaComprobante">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="xml" type="xs:string" />
+      <xs:element minOccurs="0" name="datosExtra" type="tns:datosExtraValidacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="datosExtraValidacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DatosAdicionales" type="xs:string" />
+      <xs:element minOccurs="0" name="Addenda" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ValidaComprobanteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaValidacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="respuestaValidacion">
+    <xs:sequence>
+      <xs:element name="SelloValido" type="xs:boolean" />
+      <xs:element name="EstructuraValida" type="xs:boolean" />
+      <xs:element name="SumaTotalesValido" type="xs:boolean" />
+      <xs:element name="EnListasNegras" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TipoListasNegras" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaPublicacionListasNegras" type="xs:string" />
+      <xs:element minOccurs="0" name="StatusSAT" type="xs:string" />
+      <xs:element minOccurs="0" name="NoPAC" type="xs:string" />
+      <xs:element minOccurs="0" name="RFCEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="RFCReceptor" type="xs:string" />
+      <xs:element minOccurs="0" name="UUID" type="xs:string" />
+      <xs:element name="Total" type="xs:double" />
+      <xs:element minOccurs="0" name="MensajeValidacion" type="xs:string" />
+      <xs:element name="ValidacionRealizada" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MensajeError" type="xs:string" />
+      <xs:element name="CodigoError" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TimbraXMLRetenciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="xml" type="xs:string" />
+      <xs:element minOccurs="0" name="DatosExtra" type="tns:datosExtra" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TimbraXMLRetencionesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaTimbrado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CancelaRetencion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="RFCEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="UUID" type="xs:string" />
+      <xs:element minOccurs="0" name="Certificado" type="tns:certificado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CancelaRetencionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaCancelacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerXML">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="xml" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerXMLResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaTimbrado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CancelaCFDIEnc">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="RFCEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="UUID" type="xs:string" />
+      <xs:element minOccurs="0" name="CertPem" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="KeyEnc" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CancelaCFDIEncResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaCancelacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerXMLUUID">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="uuid" type="xs:string" />
+      <xs:element minOccurs="0" name="DatosExtra" type="tns:datosExtra" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerXMLUUIDResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaTimbrado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TimbraXMLB64">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="xml" type="xs:string" />
+      <xs:element minOccurs="0" name="DatosExtra" type="tns:datosExtra" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TimbraXMLB64Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaTimbrado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CancelaCFDI33">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="RFCEmisor" type="xs:string" />
+      <xs:element minOccurs="0" name="RFCReceptor" type="xs:string" />
+      <xs:element minOccurs="0" name="Total" type="xs:string" />
+      <xs:element minOccurs="0" name="UUID" type="xs:string" />
+      <xs:element minOccurs="0" name="Certificado" type="tns:certificado" />
+      <xs:element minOccurs="0" name="DatosExtraCancelacion" type="tns:datosExtraCancelacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CancelaCFDI33Response">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaCancelacion33" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerXMLSerieFolio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="serie" type="xs:string" />
+      <xs:element minOccurs="0" name="folio" type="xs:string" />
+      <xs:element minOccurs="0" name="rfcemisor" type="xs:string" />
+      <xs:element minOccurs="0" name="DatosExtra" type="tns:datosExtra" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ObtenerXMLSerieFolioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaTimbrado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SellaConta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="xml" type="xs:string" />
+      <xs:element minOccurs="0" name="Certificado" type="tns:certificado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SellaContaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TimbraXMLFechaTimbrado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="xml" type="xs:string" />
+      <xs:element minOccurs="0" name="DatosExtra" type="tns:datosExtra" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TimbraXMLFechaTimbradoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaTimbradoFechaTimbrado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="respuestaTimbradoFechaTimbrado">
+    <xs:sequence>
+      <xs:element name="Exitoso" type="xs:boolean" />
+      <xs:element minOccurs="0" name="XMLTimbrado" type="xs:string" />
+      <xs:element minOccurs="0" name="TFD" type="xs:string" />
+      <xs:element minOccurs="0" name="UUID" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaTimbrado" type="xs:string" />
+      <xs:element name="CodigoError" type="xs:int" />
+      <xs:element minOccurs="0" name="MensajeError" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RevisaListasNegrasRFC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="RFC" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RevisaListasNegrasRFCResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:respuestaListasNegras" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="respuestaListasNegras">
+    <xs:sequence>
+      <xs:element name="EnListasNegras" type="xs:boolean" />
+      <xs:element minOccurs="0" name="TipoListasNegras" type="xs:string" />
+      <xs:element minOccurs="0" name="FechaPublicacionListasNegras" type="xs:string" />
+      <xs:element name="ValicionRealizada" type="xs:boolean" />
+      <xs:element minOccurs="0" name="MensajeError" type="xs:string" />
+      <xs:element name="CodigoError" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InsertaLogR">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Usuario" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" type="xs:string" />
+      <xs:element minOccurs="0" name="Datos" type="tns:log" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="log">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Mensaje" type="xs:string" />
+      <xs:element minOccurs="0" name="Serie" type="xs:string" />
+      <xs:element name="Folio" type="xs:int" />
+      <xs:element minOccurs="0" name="RFCEmisor" type="xs:string" />
+      <xs:element name="Total32" type="xs:double" />
+      <xs:element name="Total33" type="xs:double" />
+      <xs:element minOccurs="0" name="NombreArchivo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InsertaLogRResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

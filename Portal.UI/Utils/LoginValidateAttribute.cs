@@ -42,19 +42,11 @@ namespace Portal.UI.Utils
                 string IdUser = token.Payload["ID"].ToString();
                 string UserName = token.Payload["USERNAME"].ToString();
 
-                //if (ErpSessionHandler.Login(token))
-                //{
-
                 filterContext.Controller.ViewBag.LoggedUser = new UserModel()
                 {
-                    Id = Convert.ToInt32(IdUser)
+                    Id = Convert.ToInt32(IdUser),
                     Name = UserName
                 };
-                //}
-                //else
-                //{
-                //    filterContext.Result = new RedirectToLoginActionResult();
-                //}
             }
         }
 

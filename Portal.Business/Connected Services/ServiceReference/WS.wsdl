@@ -1,0 +1,759 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://WebService/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="WS" targetNamespace="http://WebService/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="https://timbrador.cepdi.mx:8443/WSDemo/WS?xsd=1" namespace="http://WebService/" />
+    </xsd:schema>
+  </types>
+  <message name="ValidaDatosFiscales">
+    <part name="parameters" element="tns:ValidaDatosFiscales" />
+  </message>
+  <message name="ValidaDatosFiscalesResponse">
+    <part name="parameters" element="tns:ValidaDatosFiscalesResponse" />
+  </message>
+  <message name="ObtenerXML">
+    <part name="parameters" element="tns:ObtenerXML" />
+  </message>
+  <message name="ObtenerXMLResponse">
+    <part name="parameters" element="tns:ObtenerXMLResponse" />
+  </message>
+  <message name="ObtenerPDFValidacionParam">
+    <part name="parameters" element="tns:ObtenerPDFValidacionParam" />
+  </message>
+  <message name="ObtenerPDFValidacionParamResponse">
+    <part name="parameters" element="tns:ObtenerPDFValidacionParamResponse" />
+  </message>
+  <message name="ObtenerPDFParam">
+    <part name="parameters" element="tns:ObtenerPDFParam" />
+  </message>
+  <message name="ObtenerPDFParamResponse">
+    <part name="parameters" element="tns:ObtenerPDFParamResponse" />
+  </message>
+  <message name="IngresaXML">
+    <part name="parameters" element="tns:IngresaXML" />
+  </message>
+  <message name="IngresaXMLResponse">
+    <part name="parameters" element="tns:IngresaXMLResponse" />
+  </message>
+  <message name="ObtenerPDF">
+    <part name="parameters" element="tns:ObtenerPDF" />
+  </message>
+  <message name="ObtenerPDFResponse">
+    <part name="parameters" element="tns:ObtenerPDFResponse" />
+  </message>
+  <message name="TimbraComprobante">
+    <part name="parameters" element="tns:TimbraComprobante" />
+  </message>
+  <message name="TimbraComprobanteResponse">
+    <part name="parameters" element="tns:TimbraComprobanteResponse" />
+  </message>
+  <message name="TimbraNomina">
+    <part name="parameters" element="tns:TimbraNomina" />
+  </message>
+  <message name="TimbraNominaResponse">
+    <part name="parameters" element="tns:TimbraNominaResponse" />
+  </message>
+  <message name="TimbraXMLRetenciones">
+    <part name="parameters" element="tns:TimbraXMLRetenciones" />
+  </message>
+  <message name="TimbraXMLRetencionesResponse">
+    <part name="parameters" element="tns:TimbraXMLRetencionesResponse" />
+  </message>
+  <message name="TimbraRetencion">
+    <part name="parameters" element="tns:TimbraRetencion" />
+  </message>
+  <message name="TimbraRetencionResponse">
+    <part name="parameters" element="tns:TimbraRetencionResponse" />
+  </message>
+  <message name="CancelaCFDI">
+    <part name="parameters" element="tns:CancelaCFDI" />
+  </message>
+  <message name="CancelaCFDIResponse">
+    <part name="parameters" element="tns:CancelaCFDIResponse" />
+  </message>
+  <message name="CancelaCFDI33">
+    <part name="parameters" element="tns:CancelaCFDI33" />
+  </message>
+  <message name="CancelaCFDI33Response">
+    <part name="parameters" element="tns:CancelaCFDI33Response" />
+  </message>
+  <message name="CancelaCFDI40">
+    <part name="parameters" element="tns:CancelaCFDI40" />
+  </message>
+  <message name="CancelaCFDI40Response">
+    <part name="parameters" element="tns:CancelaCFDI40Response" />
+  </message>
+  <message name="ConsultarEstatus33">
+    <part name="parameters" element="tns:ConsultarEstatus33" />
+  </message>
+  <message name="ConsultarEstatus33Response">
+    <part name="parameters" element="tns:ConsultarEstatus33Response" />
+  </message>
+  <message name="CancelaCFDIMSJ">
+    <part name="parameters" element="tns:CancelaCFDIMSJ" />
+  </message>
+  <message name="CancelaCFDIMSJResponse">
+    <part name="parameters" element="tns:CancelaCFDIMSJResponse" />
+  </message>
+  <message name="CancelaRetencion">
+    <part name="parameters" element="tns:CancelaRetencion" />
+  </message>
+  <message name="CancelaRetencionResponse">
+    <part name="parameters" element="tns:CancelaRetencionResponse" />
+  </message>
+  <message name="CancelaRetencionPXF">
+    <part name="parameters" element="tns:CancelaRetencionPXF" />
+  </message>
+  <message name="CancelaRetencionPXFResponse">
+    <part name="parameters" element="tns:CancelaRetencionPXFResponse" />
+  </message>
+  <message name="AgregaTicket">
+    <part name="parameters" element="tns:AgregaTicket" />
+  </message>
+  <message name="AgregaTicketResponse">
+    <part name="parameters" element="tns:AgregaTicketResponse" />
+  </message>
+  <message name="AgregaTicketComprobante">
+    <part name="parameters" element="tns:AgregaTicketComprobante" />
+  </message>
+  <message name="AgregaTicketComprobanteResponse">
+    <part name="parameters" element="tns:AgregaTicketComprobanteResponse" />
+  </message>
+  <message name="ObtenerDatosCuenta">
+    <part name="parameters" element="tns:ObtenerDatosCuenta" />
+  </message>
+  <message name="ObtenerDatosCuentaResponse">
+    <part name="parameters" element="tns:ObtenerDatosCuentaResponse" />
+  </message>
+  <message name="TimbraXMLFechaTimbrado">
+    <part name="parameters" element="tns:TimbraXMLFechaTimbrado" />
+  </message>
+  <message name="TimbraXMLFechaTimbradoResponse">
+    <part name="parameters" element="tns:TimbraXMLFechaTimbradoResponse" />
+  </message>
+  <message name="ConsultarPendientes">
+    <part name="parameters" element="tns:ConsultarPendientes" />
+  </message>
+  <message name="ConsultarPendientesResponse">
+    <part name="parameters" element="tns:ConsultarPendientesResponse" />
+  </message>
+  <message name="AceptacionRechazoCFDI">
+    <part name="parameters" element="tns:AceptacionRechazoCFDI" />
+  </message>
+  <message name="AceptacionRechazoCFDIResponse">
+    <part name="parameters" element="tns:AceptacionRechazoCFDIResponse" />
+  </message>
+  <message name="TimbraXML">
+    <part name="parameters" element="tns:TimbraXML" />
+  </message>
+  <message name="TimbraXMLResponse">
+    <part name="parameters" element="tns:TimbraXMLResponse" />
+  </message>
+  <message name="TimbraXMLB64">
+    <part name="parameters" element="tns:TimbraXMLB64" />
+  </message>
+  <message name="TimbraXMLB64Response">
+    <part name="parameters" element="tns:TimbraXMLB64Response" />
+  </message>
+  <message name="ValidaComprobante">
+    <part name="parameters" element="tns:ValidaComprobante" />
+  </message>
+  <message name="ValidaComprobanteResponse">
+    <part name="parameters" element="tns:ValidaComprobanteResponse" />
+  </message>
+  <message name="ObtenerPDFValidacion">
+    <part name="parameters" element="tns:ObtenerPDFValidacion" />
+  </message>
+  <message name="ObtenerPDFValidacionResponse">
+    <part name="parameters" element="tns:ObtenerPDFValidacionResponse" />
+  </message>
+  <message name="TimbraXMLEnc">
+    <part name="parameters" element="tns:TimbraXMLEnc" />
+  </message>
+  <message name="TimbraXMLEncResponse">
+    <part name="parameters" element="tns:TimbraXMLEncResponse" />
+  </message>
+  <message name="CancelaCFDIEnc">
+    <part name="parameters" element="tns:CancelaCFDIEnc" />
+  </message>
+  <message name="CancelaCFDIEncResponse">
+    <part name="parameters" element="tns:CancelaCFDIEncResponse" />
+  </message>
+  <message name="CancelaRetencionEnc">
+    <part name="parameters" element="tns:CancelaRetencionEnc" />
+  </message>
+  <message name="CancelaRetencionEncResponse">
+    <part name="parameters" element="tns:CancelaRetencionEncResponse" />
+  </message>
+  <message name="ObtenerXMLUUID">
+    <part name="parameters" element="tns:ObtenerXMLUUID" />
+  </message>
+  <message name="ObtenerXMLUUIDResponse">
+    <part name="parameters" element="tns:ObtenerXMLUUIDResponse" />
+  </message>
+  <message name="ObtenerXMLSerieFolio">
+    <part name="parameters" element="tns:ObtenerXMLSerieFolio" />
+  </message>
+  <message name="ObtenerXMLSerieFolioResponse">
+    <part name="parameters" element="tns:ObtenerXMLSerieFolioResponse" />
+  </message>
+  <message name="TimbraNomina12">
+    <part name="parameters" element="tns:TimbraNomina12" />
+  </message>
+  <message name="TimbraNomina12Response">
+    <part name="parameters" element="tns:TimbraNomina12Response" />
+  </message>
+  <message name="ObtenerPDFRetencion">
+    <part name="parameters" element="tns:ObtenerPDFRetencion" />
+  </message>
+  <message name="ObtenerPDFRetencionResponse">
+    <part name="parameters" element="tns:ObtenerPDFRetencionResponse" />
+  </message>
+  <message name="SellaConta">
+    <part name="parameters" element="tns:SellaConta" />
+  </message>
+  <message name="SellaContaResponse">
+    <part name="parameters" element="tns:SellaContaResponse" />
+  </message>
+  <message name="RevisaListasNegrasRFC">
+    <part name="parameters" element="tns:RevisaListasNegrasRFC" />
+  </message>
+  <message name="RevisaListasNegrasRFCResponse">
+    <part name="parameters" element="tns:RevisaListasNegrasRFCResponse" />
+  </message>
+  <message name="ConsultaRFC">
+    <part name="parameters" element="tns:ConsultaRFC" />
+  </message>
+  <message name="ConsultaRFCResponse">
+    <part name="parameters" element="tns:ConsultaRFCResponse" />
+  </message>
+  <message name="InsertaLogR">
+    <part name="parameters" element="tns:InsertaLogR" />
+  </message>
+  <message name="InsertaLogRResponse">
+    <part name="parameters" element="tns:InsertaLogRResponse" />
+  </message>
+  <message name="ObtenerDatosCuentaConsumo">
+    <part name="parameters" element="tns:ObtenerDatosCuentaConsumo" />
+  </message>
+  <message name="ObtenerDatosCuentaConsumoResponse">
+    <part name="parameters" element="tns:ObtenerDatosCuentaConsumoResponse" />
+  </message>
+  <portType name="WS">
+    <operation name="ValidaDatosFiscales">
+      <input wsam:Action="http://WebService/WS/ValidaDatosFiscalesRequest" message="tns:ValidaDatosFiscales" />
+      <output wsam:Action="http://WebService/WS/ValidaDatosFiscalesResponse" message="tns:ValidaDatosFiscalesResponse" />
+    </operation>
+    <operation name="ObtenerXML">
+      <input wsam:Action="http://WebService/WS/ObtenerXMLRequest" message="tns:ObtenerXML" />
+      <output wsam:Action="http://WebService/WS/ObtenerXMLResponse" message="tns:ObtenerXMLResponse" />
+    </operation>
+    <operation name="ObtenerPDFValidacionParam">
+      <input wsam:Action="http://WebService/WS/ObtenerPDFValidacionParamRequest" message="tns:ObtenerPDFValidacionParam" />
+      <output wsam:Action="http://WebService/WS/ObtenerPDFValidacionParamResponse" message="tns:ObtenerPDFValidacionParamResponse" />
+    </operation>
+    <operation name="ObtenerPDFParam">
+      <input wsam:Action="http://WebService/WS/ObtenerPDFParamRequest" message="tns:ObtenerPDFParam" />
+      <output wsam:Action="http://WebService/WS/ObtenerPDFParamResponse" message="tns:ObtenerPDFParamResponse" />
+    </operation>
+    <operation name="IngresaXML">
+      <input wsam:Action="http://WebService/WS/IngresaXMLRequest" message="tns:IngresaXML" />
+      <output wsam:Action="http://WebService/WS/IngresaXMLResponse" message="tns:IngresaXMLResponse" />
+    </operation>
+    <operation name="ObtenerPDF">
+      <input wsam:Action="http://WebService/WS/ObtenerPDFRequest" message="tns:ObtenerPDF" />
+      <output wsam:Action="http://WebService/WS/ObtenerPDFResponse" message="tns:ObtenerPDFResponse" />
+    </operation>
+    <operation name="TimbraComprobante">
+      <input wsam:Action="http://WebService/WS/TimbraComprobanteRequest" message="tns:TimbraComprobante" />
+      <output wsam:Action="http://WebService/WS/TimbraComprobanteResponse" message="tns:TimbraComprobanteResponse" />
+    </operation>
+    <operation name="TimbraNomina">
+      <input wsam:Action="http://WebService/WS/TimbraNominaRequest" message="tns:TimbraNomina" />
+      <output wsam:Action="http://WebService/WS/TimbraNominaResponse" message="tns:TimbraNominaResponse" />
+    </operation>
+    <operation name="TimbraXMLRetenciones">
+      <input wsam:Action="http://WebService/WS/TimbraXMLRetencionesRequest" message="tns:TimbraXMLRetenciones" />
+      <output wsam:Action="http://WebService/WS/TimbraXMLRetencionesResponse" message="tns:TimbraXMLRetencionesResponse" />
+    </operation>
+    <operation name="TimbraRetencion">
+      <input wsam:Action="http://WebService/WS/TimbraRetencionRequest" message="tns:TimbraRetencion" />
+      <output wsam:Action="http://WebService/WS/TimbraRetencionResponse" message="tns:TimbraRetencionResponse" />
+    </operation>
+    <operation name="CancelaCFDI">
+      <input wsam:Action="http://WebService/WS/CancelaCFDIRequest" message="tns:CancelaCFDI" />
+      <output wsam:Action="http://WebService/WS/CancelaCFDIResponse" message="tns:CancelaCFDIResponse" />
+    </operation>
+    <operation name="CancelaCFDI33">
+      <input wsam:Action="http://WebService/WS/CancelaCFDI33Request" message="tns:CancelaCFDI33" />
+      <output wsam:Action="http://WebService/WS/CancelaCFDI33Response" message="tns:CancelaCFDI33Response" />
+    </operation>
+    <operation name="CancelaCFDI40">
+      <input wsam:Action="http://WebService/WS/CancelaCFDI40Request" message="tns:CancelaCFDI40" />
+      <output wsam:Action="http://WebService/WS/CancelaCFDI40Response" message="tns:CancelaCFDI40Response" />
+    </operation>
+    <operation name="ConsultarEstatus33">
+      <input wsam:Action="http://WebService/WS/ConsultarEstatus33Request" message="tns:ConsultarEstatus33" />
+      <output wsam:Action="http://WebService/WS/ConsultarEstatus33Response" message="tns:ConsultarEstatus33Response" />
+    </operation>
+    <operation name="CancelaCFDIMSJ">
+      <input wsam:Action="http://WebService/WS/CancelaCFDIMSJRequest" message="tns:CancelaCFDIMSJ" />
+      <output wsam:Action="http://WebService/WS/CancelaCFDIMSJResponse" message="tns:CancelaCFDIMSJResponse" />
+    </operation>
+    <operation name="CancelaRetencion">
+      <input wsam:Action="http://WebService/WS/CancelaRetencionRequest" message="tns:CancelaRetencion" />
+      <output wsam:Action="http://WebService/WS/CancelaRetencionResponse" message="tns:CancelaRetencionResponse" />
+    </operation>
+    <operation name="CancelaRetencionPXF">
+      <input wsam:Action="http://WebService/WS/CancelaRetencionPXFRequest" message="tns:CancelaRetencionPXF" />
+      <output wsam:Action="http://WebService/WS/CancelaRetencionPXFResponse" message="tns:CancelaRetencionPXFResponse" />
+    </operation>
+    <operation name="AgregaTicket">
+      <input wsam:Action="http://WebService/WS/AgregaTicketRequest" message="tns:AgregaTicket" />
+      <output wsam:Action="http://WebService/WS/AgregaTicketResponse" message="tns:AgregaTicketResponse" />
+    </operation>
+    <operation name="AgregaTicketComprobante">
+      <input wsam:Action="http://WebService/WS/AgregaTicketComprobanteRequest" message="tns:AgregaTicketComprobante" />
+      <output wsam:Action="http://WebService/WS/AgregaTicketComprobanteResponse" message="tns:AgregaTicketComprobanteResponse" />
+    </operation>
+    <operation name="ObtenerDatosCuenta">
+      <input wsam:Action="http://WebService/WS/ObtenerDatosCuentaRequest" message="tns:ObtenerDatosCuenta" />
+      <output wsam:Action="http://WebService/WS/ObtenerDatosCuentaResponse" message="tns:ObtenerDatosCuentaResponse" />
+    </operation>
+    <operation name="TimbraXMLFechaTimbrado">
+      <input wsam:Action="http://WebService/WS/TimbraXMLFechaTimbradoRequest" message="tns:TimbraXMLFechaTimbrado" />
+      <output wsam:Action="http://WebService/WS/TimbraXMLFechaTimbradoResponse" message="tns:TimbraXMLFechaTimbradoResponse" />
+    </operation>
+    <operation name="ConsultarPendientes">
+      <input wsam:Action="http://WebService/WS/ConsultarPendientesRequest" message="tns:ConsultarPendientes" />
+      <output wsam:Action="http://WebService/WS/ConsultarPendientesResponse" message="tns:ConsultarPendientesResponse" />
+    </operation>
+    <operation name="AceptacionRechazoCFDI">
+      <input wsam:Action="http://WebService/WS/AceptacionRechazoCFDIRequest" message="tns:AceptacionRechazoCFDI" />
+      <output wsam:Action="http://WebService/WS/AceptacionRechazoCFDIResponse" message="tns:AceptacionRechazoCFDIResponse" />
+    </operation>
+    <operation name="TimbraXML">
+      <input wsam:Action="http://WebService/WS/TimbraXMLRequest" message="tns:TimbraXML" />
+      <output wsam:Action="http://WebService/WS/TimbraXMLResponse" message="tns:TimbraXMLResponse" />
+    </operation>
+    <operation name="TimbraXMLB64">
+      <input wsam:Action="http://WebService/WS/TimbraXMLB64Request" message="tns:TimbraXMLB64" />
+      <output wsam:Action="http://WebService/WS/TimbraXMLB64Response" message="tns:TimbraXMLB64Response" />
+    </operation>
+    <operation name="ValidaComprobante">
+      <input wsam:Action="http://WebService/WS/ValidaComprobanteRequest" message="tns:ValidaComprobante" />
+      <output wsam:Action="http://WebService/WS/ValidaComprobanteResponse" message="tns:ValidaComprobanteResponse" />
+    </operation>
+    <operation name="ObtenerPDFValidacion">
+      <input wsam:Action="http://WebService/WS/ObtenerPDFValidacionRequest" message="tns:ObtenerPDFValidacion" />
+      <output wsam:Action="http://WebService/WS/ObtenerPDFValidacionResponse" message="tns:ObtenerPDFValidacionResponse" />
+    </operation>
+    <operation name="TimbraXMLEnc">
+      <input wsam:Action="http://WebService/WS/TimbraXMLEncRequest" message="tns:TimbraXMLEnc" />
+      <output wsam:Action="http://WebService/WS/TimbraXMLEncResponse" message="tns:TimbraXMLEncResponse" />
+    </operation>
+    <operation name="CancelaCFDIEnc">
+      <input wsam:Action="http://WebService/WS/CancelaCFDIEncRequest" message="tns:CancelaCFDIEnc" />
+      <output wsam:Action="http://WebService/WS/CancelaCFDIEncResponse" message="tns:CancelaCFDIEncResponse" />
+    </operation>
+    <operation name="CancelaRetencionEnc">
+      <input wsam:Action="http://WebService/WS/CancelaRetencionEncRequest" message="tns:CancelaRetencionEnc" />
+      <output wsam:Action="http://WebService/WS/CancelaRetencionEncResponse" message="tns:CancelaRetencionEncResponse" />
+    </operation>
+    <operation name="ObtenerXMLUUID">
+      <input wsam:Action="http://WebService/WS/ObtenerXMLUUIDRequest" message="tns:ObtenerXMLUUID" />
+      <output wsam:Action="http://WebService/WS/ObtenerXMLUUIDResponse" message="tns:ObtenerXMLUUIDResponse" />
+    </operation>
+    <operation name="ObtenerXMLSerieFolio">
+      <input wsam:Action="http://WebService/WS/ObtenerXMLSerieFolioRequest" message="tns:ObtenerXMLSerieFolio" />
+      <output wsam:Action="http://WebService/WS/ObtenerXMLSerieFolioResponse" message="tns:ObtenerXMLSerieFolioResponse" />
+    </operation>
+    <operation name="TimbraNomina12">
+      <input wsam:Action="http://WebService/WS/TimbraNomina12Request" message="tns:TimbraNomina12" />
+      <output wsam:Action="http://WebService/WS/TimbraNomina12Response" message="tns:TimbraNomina12Response" />
+    </operation>
+    <operation name="ObtenerPDFRetencion">
+      <input wsam:Action="http://WebService/WS/ObtenerPDFRetencionRequest" message="tns:ObtenerPDFRetencion" />
+      <output wsam:Action="http://WebService/WS/ObtenerPDFRetencionResponse" message="tns:ObtenerPDFRetencionResponse" />
+    </operation>
+    <operation name="SellaConta">
+      <input wsam:Action="http://WebService/WS/SellaContaRequest" message="tns:SellaConta" />
+      <output wsam:Action="http://WebService/WS/SellaContaResponse" message="tns:SellaContaResponse" />
+    </operation>
+    <operation name="RevisaListasNegrasRFC">
+      <input wsam:Action="http://WebService/WS/RevisaListasNegrasRFCRequest" message="tns:RevisaListasNegrasRFC" />
+      <output wsam:Action="http://WebService/WS/RevisaListasNegrasRFCResponse" message="tns:RevisaListasNegrasRFCResponse" />
+    </operation>
+    <operation name="ConsultaRFC">
+      <input wsam:Action="http://WebService/WS/ConsultaRFCRequest" message="tns:ConsultaRFC" />
+      <output wsam:Action="http://WebService/WS/ConsultaRFCResponse" message="tns:ConsultaRFCResponse" />
+    </operation>
+    <operation name="InsertaLogR">
+      <input wsam:Action="http://WebService/WS/InsertaLogRRequest" message="tns:InsertaLogR" />
+      <output wsam:Action="http://WebService/WS/InsertaLogRResponse" message="tns:InsertaLogRResponse" />
+    </operation>
+    <operation name="ObtenerDatosCuentaConsumo">
+      <input wsam:Action="http://WebService/WS/ObtenerDatosCuentaConsumoRequest" message="tns:ObtenerDatosCuentaConsumo" />
+      <output wsam:Action="http://WebService/WS/ObtenerDatosCuentaConsumoResponse" message="tns:ObtenerDatosCuentaConsumoResponse" />
+    </operation>
+  </portType>
+  <binding name="WSPortBinding" type="tns:WS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="ValidaDatosFiscales">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ObtenerXML">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ObtenerPDFValidacionParam">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ObtenerPDFParam">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="IngresaXML">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ObtenerPDF">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="TimbraComprobante">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="TimbraNomina">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="TimbraXMLRetenciones">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="TimbraRetencion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CancelaCFDI">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CancelaCFDI33">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CancelaCFDI40">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ConsultarEstatus33">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CancelaCFDIMSJ">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CancelaRetencion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CancelaRetencionPXF">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="AgregaTicket">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="AgregaTicketComprobante">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ObtenerDatosCuenta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="TimbraXMLFechaTimbrado">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ConsultarPendientes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="AceptacionRechazoCFDI">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="TimbraXML">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="TimbraXMLB64">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ValidaComprobante">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ObtenerPDFValidacion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="TimbraXMLEnc">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CancelaCFDIEnc">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CancelaRetencionEnc">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ObtenerXMLUUID">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ObtenerXMLSerieFolio">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="TimbraNomina12">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ObtenerPDFRetencion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SellaConta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RevisaListasNegrasRFC">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ConsultaRFC">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="InsertaLogR">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ObtenerDatosCuentaConsumo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="WS">
+    <port name="WSPort" binding="tns:WSPortBinding">
+      <soap:address location="https://timbrador.cepdi.mx:8443/WSDemo/WS" />
+    </port>
+  </service>
+</definitions>

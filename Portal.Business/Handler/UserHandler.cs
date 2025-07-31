@@ -16,7 +16,7 @@ namespace Portal.Business.Handler
         {
             try
             {
-                var service = new BaseService<FilterDataTableModel>(EndPoints.ENDPOINT_USERS);
+                var service = new ApiBaseService<FilterDataTableModel>(ServiceParameters.ENDPOINT_USERS);
 
                 return await service.List<UserModel>(model);
             }
@@ -31,7 +31,7 @@ namespace Portal.Business.Handler
         {
             try
             {
-                var service = new BaseService<UserModel>(EndPoints.ENDPOINT_USERS);
+                var service = new ApiBaseService<UserModel>(ServiceParameters.ENDPOINT_USERS);
 
                 return await service.Get<UserModel>(id);
             }
@@ -50,7 +50,7 @@ namespace Portal.Business.Handler
         {
             try
             {
-                var service = new BaseService<UserModel>(EndPoints.ENDPOINT_USERS);
+                var service = new ApiBaseService<UserModel>(ServiceParameters.ENDPOINT_USERS);
 
                 return await service.Post(user);
             }
@@ -69,7 +69,7 @@ namespace Portal.Business.Handler
         {
             try
             {
-                var service = new BaseService<UserModel>(EndPoints.ENDPOINT_USERS);
+                var service = new ApiBaseService<UserModel>(ServiceParameters.ENDPOINT_USERS);
 
                 return await service.Put(user.Id, user);
             }
@@ -88,7 +88,7 @@ namespace Portal.Business.Handler
         {
             try
             {
-                var service = new BaseService<UserModel>(EndPoints.ENDPOINT_USERS);
+                var service = new ApiBaseService<UserModel>(ServiceParameters.ENDPOINT_USERS);
 
                 return await service.Delete(userId);
             }

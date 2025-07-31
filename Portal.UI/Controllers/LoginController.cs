@@ -21,7 +21,7 @@ namespace Portal.UI.Controllers
             try
             {
                 LoginHandler handler = new LoginHandler();
-                return handler.CreateStringToken(user?.Id.ToString(), user?.UserName)?.ToString());
+                return handler.CreateStringToken(user?.Id.ToString(), user?.UserName);
             }
             catch (Exception)
             {

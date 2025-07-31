@@ -12,16 +12,16 @@ using System.Threading.Tasks;
 
 namespace Portal.Business.WebService
 {
-    public class BaseService<TRequest>
+    public class ApiBaseService<TRequest>
     {
         private readonly string _endpoint;
 
         private static readonly HttpClient _client = new HttpClient
         {
-            BaseAddress = new Uri(EndPoints.BASE_URL)
+            BaseAddress = new Uri(ServiceParameters.BASE_URL)
         };
 
-        public BaseService(string endPoint)
+        public ApiBaseService(string endPoint)
         {
             _client.DefaultRequestHeaders.Accept.Clear();
             _client.DefaultRequestHeaders.Add("Accept", "application/json");

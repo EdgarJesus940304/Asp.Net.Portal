@@ -3,35 +3,55 @@
     ViewBag.Title = "CFDI";
 }
 
-@section styles{
-    <link href="~/Content/Dropzone/dropzone.css" rel="stylesheet" />
-}
+<style>
+    #drop-zone {
+        width: 800px;
+        height: 350px;
+        border: 2px dashed #ccc;
+        border-radius: 10px;
+        text-align: center;
+        line-height: 150px;
+        color: #aaa;
+        font-family: Arial, sans-serif;
+        margin: 20px auto;
+    }
+
+        #drop-zone.dragover {
+            border-color: #333;
+            color: #333;
+            background-color: #f0f0f0;
+        }
+
+    #file-input {
+        display: none;
+    }
+</style>
+
+<h5>Obtener PDF</h5>
 
 <div class="container">
     <div class="row">
-        <div id="dropzone">
-            <div id="demo-upload" class="dropzone needsclick dz-clickable">
-                <div class="dz-message needsclick">
-                    <button type="button" class="dz-button">Favor de arrastrar el archivo a cargar.</button><br>
-                    <span class="note needsclick">(O bien puedes buscar tus archivos dando click <strong>aqui.</strong>)</span>
-                </div>
+        <div class="col-md-12 d-flex justify-content-center align-items-center" style="min-height: 200px; flex-direction: column;">
+            <div id="drop-zone" style="margin-bottom: 10px;">
+                Favor de arrastrar el archivo a cargar
+                <p class="note needsclick">(O bien puedes buscar tus archivos dando click <strong>aqui.</strong>)</p>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-4 ">
-                <button id="quote_upload_submit" class="btn blue btn-outline">Confirmar</button>
-            </div>
-            <div class="col-sm-4 ">
-                <button id="quote_upload_clear" class="btn green-dark btn-outline">Limpiar</button>
-            </div>
+            <input type="file" id="file-input" />
+            <div id="status" style="margin-top: 10px;"></div>
         </div>
     </div>
-
+    <div class="row">
+        @*<div class="col-sm-4 ">
+            <button id="quote_upload_submit" class="btn btn-primary">Confirmar</button>
+        </div>
+        <div class="col-sm-4 ">
+            <button id="quote_upload_clear" class="btn btn-success">Limpiar</button>
+        </div>*@
+    </div>
 </div>
 
 
 
 @section Scripts{
-    <script src="~/Scripts/Dropzone/dropzone.js"></script>
     <script src="~/Scripts/App/cfdi.js"></script>
 }

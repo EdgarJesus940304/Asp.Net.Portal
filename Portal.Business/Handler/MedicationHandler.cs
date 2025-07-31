@@ -16,7 +16,7 @@ namespace Portal.Business.Handler
         {
             try
             {
-                var service = new BaseService<FilterDataTableModel>(EndPoints.ENDPOINT_MEDICATIONS);
+                var service = new ApiBaseService<FilterDataTableModel>(ServiceParameters.ENDPOINT_MEDICATIONS);
 
                 return await service.List<MedicationModel>(model);
             }
@@ -31,7 +31,7 @@ namespace Portal.Business.Handler
         {
             try
             {
-                var service = new BaseService<MedicationModel>(EndPoints.ENDPOINT_MEDICATIONS);
+                var service = new ApiBaseService<MedicationModel>(ServiceParameters.ENDPOINT_MEDICATIONS);
 
                 return await service.Get<MedicationModel>(id);
             }
@@ -50,7 +50,7 @@ namespace Portal.Business.Handler
         {
             try
             {
-                var service = new BaseService<MedicationModel>(EndPoints.ENDPOINT_MEDICATIONS);
+                var service = new ApiBaseService<MedicationModel>(ServiceParameters.ENDPOINT_MEDICATIONS);
 
                 return await service.Post(medication);
             }
@@ -69,7 +69,7 @@ namespace Portal.Business.Handler
         {
             try
             {
-                var service = new BaseService<MedicationModel>(EndPoints.ENDPOINT_MEDICATIONS);
+                var service = new ApiBaseService<MedicationModel>(ServiceParameters.ENDPOINT_MEDICATIONS);
 
                 return await service.Put(medication.Id, medication);
             }
@@ -88,7 +88,7 @@ namespace Portal.Business.Handler
         {
             try
             {
-                var service = new BaseService<MedicationModel>(EndPoints.ENDPOINT_MEDICATIONS);
+                var service = new ApiBaseService<MedicationModel>(ServiceParameters.ENDPOINT_MEDICATIONS);
 
                 return await service.Delete(medicationId);
             }
@@ -106,7 +106,7 @@ namespace Portal.Business.Handler
         {
             try
             {
-                var service = new BaseService<PharmaceuticalFormModel>(EndPoints.ENDPOINT_MEDICATIONS);
+                var service = new ApiBaseService<PharmaceuticalFormModel>(ServiceParameters.ENDPOINT_MEDICATIONS);
 
                 return await service.List<PharmaceuticalFormModel>("pharmaceuticalForms");
             }
