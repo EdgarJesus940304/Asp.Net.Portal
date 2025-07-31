@@ -32,20 +32,7 @@
 
     $('#price').on('blur', function () {
         var valor = $(this).val().replace(/[^0-9.]/g, '');
-
-        var numero = parseFloat(valor);
-        if (!isNaN(numero)) {
-            $(this).val(
-                new Intl.NumberFormat('es-MX', {
-                    style: 'currency',
-                    currency: 'MXN',
-                    minimumFractionDigits: 2,
-                    maximumFractionDigits: 2
-                }).format(numero)
-            );
-        } else {
-            $(this).val('');
-        }
+        SetCurrencyFormat(valor, $(this));
     });
 
     //#region Tablero
@@ -80,6 +67,12 @@
             },
             columns: [
                 {
+                    "data": "Id",
+                    "searchable": true,
+                    "className": "dt-left",
+
+                },
+                {
                     "data": "Name",
                     "searchable": true,
                     "className": "dt-left",
@@ -108,7 +101,7 @@
                 {
                     "data": "Presentation",
                     "searchable": true,
-                    "className": "dt-center",
+                    "className": "dt-left",
                 },
                 {
                     "data": "Stock",
@@ -126,7 +119,7 @@
                     "orderable": false,
                     "defaultContent": "",
                     "render": function (data, type, row) {
-                        return '<button title="Ver" class="btn btn-sm btn-info btn-search"><i class="fa fa-search"></i></button> <button title="Actualizar" class="btn btn-sm btn-primary btn-update"><i class="fa fa-pencil"></i></button> <button title="Eliminar" class="btn btn-sm btn-danger btn-delete"><i class="fa fa-trash"></i></button>'
+                        return '<button title="Visualizar" class="btn btn-sm btn-info btn-search"><i class="fa fa-search"></i></button> <button title="Editar" class="btn btn-sm btn-primary btn-update"><i class="fa fa-pencil"></i></button> <button title="Eliminar" class="btn btn-sm btn-danger btn-delete"><i class="fa fa-trash"></i></button>'
 
                     }
                 }
@@ -149,6 +142,7 @@
         $('#price').prop('disabled', true);
         $('#stock').prop('disabled', true);
         $('#status').prop('disabled', true);
+        $('#pharmaceuticalForm').prop('disabled', true);    
         $('#saveButton').hide();
         medication.Id = data.Id;
         GetData();
@@ -183,6 +177,7 @@
         medication.Price = price;
         medication.Stock = $("#stock").val();
         medication.Enable = $('#status').is(':checked') ? 1 : 0;
+        medication.PharmaceuticalForm.Id = $('#pharmaceuticalForm').val();
         SaveOrUpdate();
     })
 
@@ -255,9 +250,10 @@
         $("#name").val("");
         $("#concentration").val("");
         $("#presentation").val("");
-        $("#price").val(0);
+        SetCurrencyFormat(0, "#price");
         $("#stock").val(0);
         $('#status').prop('checked', true);
+        $('#pharmaceuticalForm').prop('selectedIndex', 0);
 
         $('#name').prop('disabled', false);
         $('#concentration').prop('disabled', false);
@@ -265,6 +261,7 @@
         $('#price').prop('disabled', false);
         $('#stock').prop('disabled', false);
         $('#status').prop('disabled', false);
+        $('#pharmaceuticalForm').prop('disabled', false);    
         $('#saveButton').show();
         url = null;
     }
@@ -320,8 +317,9 @@
                     $("#name").val(response.Data.Name);
                     $("#concentration").val(response.Data.Concentration);
                     $("#presentation").val(response.Data.Presentation);
-                    $("#price").val(response.Data.price);
+                    SetCurrencyFormat(response.Data.Price, "#price");
                     $("#stock").val(response.Data.Stock);
+                    $('#pharmaceuticalForm').val(response.Data.PharmaceuticalForm.Id);
                     $('#status').prop('checked', false);
                     if (response.Data.Enable != null || response.Data.Enable != undefined) {
                         if (response.Data.Enable > 0)
@@ -389,6 +387,23 @@
             }
 
         });
+    }
+
+
+    function SetCurrencyFormat(valor, element) {
+        var numero = parseFloat(valor);
+        if (!isNaN(numero)) {
+            $(element).val(
+                new Intl.NumberFormat('es-MX', {
+                    style: 'currency',
+                    currency: 'MXN',
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2
+                }).format(numero)
+            );
+        } else {
+            $(element).val('');
+        }
     }
     //#endregion
 

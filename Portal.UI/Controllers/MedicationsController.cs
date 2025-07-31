@@ -24,7 +24,7 @@ namespace Portal.UI.Controllers
         {
             MedicationHandler handler = new MedicationHandler();
 
-            var response = await handler.ListMedications(model);
+            var response = await handler.GetMedicationsListAsync(model);
 
             return Json(response.Data);
 
@@ -34,7 +34,7 @@ namespace Portal.UI.Controllers
         {
             MedicationHandler handler = new MedicationHandler();
 
-            var response = await handler.GetMedication(id);
+            var response = await handler.GetMedicationAsync(id);
             if (response.ResponseType == ResponseType.OK)
             {
                 return Json(new MessageResponse<MedicationModel>()
@@ -60,7 +60,7 @@ namespace Portal.UI.Controllers
         {
             MedicationHandler handler = new MedicationHandler();
 
-            var response = await handler.SaveMedication(medication);
+            var response = await handler.CreateMedicationAsync(medication);
             if (response.ResponseType == ResponseType.OK)
             {
                 return Json(new MessageResponse()
@@ -83,7 +83,7 @@ namespace Portal.UI.Controllers
         {
             MedicationHandler handler = new MedicationHandler();
 
-            var response = await handler.UpdateMedication(medication);
+            var response = await handler.ModifyMedication(medication);
             if (response.ResponseType == ResponseType.OK)
             {
                 return Json(new MessageResponse()
@@ -107,7 +107,7 @@ namespace Portal.UI.Controllers
         {
             MedicationHandler handler = new MedicationHandler();
 
-            var response = await handler.DeleteMedication(medicationId);
+            var response = await handler.RemoveMedication(medicationId);
             if (response.ResponseType == ResponseType.OK)
             {
                 return Json(new MessageResponse()

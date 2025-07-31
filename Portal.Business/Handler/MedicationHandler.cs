@@ -12,7 +12,7 @@ namespace Portal.Business.Handler
 {
     public class MedicationHandler
     {
-        public async Task<RootResult<MedicationModel>> ListMedications(FilterDataTableModel model)
+        public async Task<RootResult<MedicationModel>> GetMedicationsListAsync(FilterDataTableModel model)
         {
             try
             {
@@ -27,7 +27,7 @@ namespace Portal.Business.Handler
 
         }
 
-        public async Task<MessageResponse<MedicationModel>> GetMedication(int id)
+        public async Task<MessageResponse<MedicationModel>> GetMedicationAsync(int id)
         {
             try
             {
@@ -46,7 +46,7 @@ namespace Portal.Business.Handler
 
         }
 
-        public async Task<MessageResponse> SaveMedication(MedicationModel medication)
+        public async Task<MessageResponse> CreateMedicationAsync(MedicationModel medication)
         {
             try
             {
@@ -65,7 +65,7 @@ namespace Portal.Business.Handler
 
         }
 
-        public async Task<MessageResponse> UpdateMedication(MedicationModel medication)
+        public async Task<MessageResponse> ModifyMedication(MedicationModel medication)
         {
             try
             {
@@ -84,7 +84,7 @@ namespace Portal.Business.Handler
 
         }
 
-        public async Task<MessageResponse> DeleteMedication(int medicationId)
+        public async Task<MessageResponse> RemoveMedication(int medicationId)
         {
             try
             {
