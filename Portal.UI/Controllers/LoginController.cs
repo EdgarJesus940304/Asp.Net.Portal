@@ -4,6 +4,8 @@ using Portal.Business.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
@@ -16,52 +18,54 @@ namespace Portal.UI.Controllers
             return View();
         }
 
-        private string GenerateToken(UserModel user, DateTime expires)
+
+        public async Task<ActionResult> Login(UserModel userModel)
         {
-            try
+
+            LoginHandler handler = new LoginHandler();
+            MessageResponse<UserModel> response = await handler.Login(userModel);
+            if (response.ResponseType == ResponseType.OK)
             {
-                LoginHandler handler = new LoginHandler();
-                return handler.CreateStringToken(user?.Id.ToString(), user?.UserName);
-            }
-            catch (Exception)
-            {
-                return string.Empty;
-            }
-        }
-        public ActionResult Login(UserModel userModel)
-        {
-            try
-            {
-                var handler = new LoginHandler();
-                UserModel LoggedUser = new UserModel();
-                var response = handler.Login(userModel);
-                if (response.Number == 200)
+                UserModel LoggedUser = response.Data;
+                DateTime requestAt = DateTime.Now;
+                DateTime expiresIn = DateTime.Now.AddDays(2);
+
+                var token = handler.CreateStringToken(LoggedUser?.Id.ToString(), LoggedUser.UserName);
+
+                HttpCookie redirectUrlCookie = Request.Cookies.Get("returnUrl");
+                HttpCookie cookie = new HttpCookie("Cookie_Session")
                 {
-                    LoggedUser = null;
-                    DateTime requestAt = DateTime.Now;
-                    DateTime expiresIn = DateTime.Now.AddDays(2);
-                    var token = GenerateToken(LoggedUser, expiresIn);
+                    Value = token,
+                    Expires = DateTime.Now.AddDays(30)
+                };
+                Response.Cookies.Add(cookie);
 
-                    HttpCookie redirectUrlCookie = Request.Cookies.Get("returnUrl");
-                    HttpCookie cookie = new HttpCookie("Cookie_Session")
-                    {
-                        Value = token,
-                        Expires = DateTime.Now.AddDays(30)
-                    };
-                    Response.Cookies.Add(cookie);
-                }
-
-                return Json(response, JsonRequestBehavior.AllowGet);
-
+                return Json(new MessageResponse<UserModel>()
+                {
+                    Message = response.Message,
+                    Number = 200,
+                    Data = response.Data
+                });
             }
-            catch (Exception ex)
+            else if (response.ResponseType == ResponseType.Warning)
             {
                 return Json(new MessageResponse()
                 {
-                    Number = 500,
-                    Message = "No fue posible obtener conexión para iniciar sesion, intente mas tarde " + ex.Message
+                    Message = response.Message,
+                    Number = 400
+                });
+            }
+            else
+            {
+                Response.ClearHeaders();
+                Response.ClearContent();
+                Response.StatusCode = (int)HttpStatusCode.InternalServerError;
 
-                }, JsonRequestBehavior.AllowGet);
+                return Json(new MessageResponse()
+                {
+                    Message = response.Message,
+                    Number = 500
+                });
             }
         }
 

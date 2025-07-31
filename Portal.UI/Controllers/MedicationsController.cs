@@ -2,6 +2,7 @@
 using Portal.Business.Models;
 using Portal.Business.Models.DataTables;
 using Portal.Business.Utils;
+using Portal.UI.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,7 @@ using System.Web.Mvc;
 
 namespace Portal.UI.Controllers
 {
+    [LoginValidate]
     public class MedicationsController : Controller
     {
         // GET: Medications
@@ -75,7 +77,6 @@ namespace Portal.UI.Controllers
                     Number = 500
                 });
             }
-
         }
 
         public async Task<ActionResult> UpdateMedication(MedicationModel medication)

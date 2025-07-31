@@ -219,6 +219,39 @@ namespace Portal.Business.WebService
             }
         }
 
+        public async Task<MessageResponse<TResponse>> Login<TResponse>(TRequest model)
+        {
+            try
+            {
+                string json = JsonConvert.SerializeObject(model);
+                StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
 
+                HttpResponseMessage response = await _client.PostAsync($"{_endpoint}/login", content);
+                string respuestaJson = await response.Content.ReadAsStringAsync();
+
+                try
+                {
+                    return JsonConvert.DeserializeObject<MessageResponse<TResponse>>(respuestaJson)
+                           ?? new MessageResponse<TResponse> { ResponseType = ResponseType.Error, Message = "Respuesta vacía" };
+                }
+                catch (JsonException)
+                {
+                    return new MessageResponse<TResponse>
+                    {
+                        ResponseType = ResponseType.Error,
+                        Message = $"Respuesta no válida: {respuestaJson}"
+                    };
+                }
+
+            }
+            catch (HttpRequestException e)
+            {
+                return new MessageResponse<TResponse>()
+                {
+                    Message = $"{e.Message} {e?.InnerException?.Message}",
+                    ResponseType = ResponseType.Error
+                };
+            }
+        }
     }
 }

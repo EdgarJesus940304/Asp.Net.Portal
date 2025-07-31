@@ -37,6 +37,8 @@
 
     //#region Funciones
     function UploadFile(file) {
+        $('#status').text('');
+
         var fileName = file.name.toLowerCase();
         if (!fileName.endsWith('.xml')) {
             $('#status').text('Solo se permiten archivos XML');
@@ -64,6 +66,7 @@
                 });
             },
             success: function (response) {
+                Swal.close();
                 Swal.fire({
                     title: '¡Correcto!',
                     text: "Se obtuvo correctamente el archivo",
@@ -82,8 +85,9 @@
                     }
                 });
             },
-            error: function (xhr) {
-                var errorMessage = xhr.responseJSON.Message || 'Ocurrió un error inesperado.';
+            error: function (error) {
+                Swal.close();
+                var errorMessage = error.responseJSON.Message || 'Ocurrió un error inesperado.';
                 Swal.fire({
                     title: '¡Error!',
                     text: errorMessage,
