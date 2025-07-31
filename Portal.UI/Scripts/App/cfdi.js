@@ -75,12 +75,8 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
                         var blob = new Blob([response], { type: 'application/pdf' });
-                        var link = document.createElement('a');
-                        link.href = window.URL.createObjectURL(blob);
-                        link.download = 'archivo.pdf';
-                        document.body.appendChild(link);
-                        link.click();
-                        document.body.removeChild(link);
+                        var blobUrl = window.URL.createObjectURL(blob);
+                        window.open(blobUrl, '_blank');
                         $('#file-input').val('');
                     }
                 });
