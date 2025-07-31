@@ -10,7 +10,7 @@ namespace Portal.Business.WebService
 {
     public class CfdiClient
     {
-        public MessageResponse<byte[]> ConsumeServicePdf(string usuario, string password, string uuid)
+        public MessageResponse<byte[]> ConsumeServiceGetPdf(string usuario, string password, string uuid)
         {
             try
             {

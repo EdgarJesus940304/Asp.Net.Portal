@@ -28,7 +28,7 @@ namespace Portal.Business.Handler
                     };
                 }
 
-                MessageResponse<byte[]> responseClient = client.ConsumeServicePdf(ServiceParameters.USER, ServiceParameters.PASSWORD, result.Data);
+                MessageResponse<byte[]> responseClient = client.ConsumeServiceGetPdf(ServiceParameters.USER, ServiceParameters.PASSWORD, result.Data);
 
 
                 return responseClient;
