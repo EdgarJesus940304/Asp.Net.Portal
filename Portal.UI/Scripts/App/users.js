@@ -5,6 +5,7 @@
     //#region Variables
     var url = null;
     var user = new UserModel();
+    var isValid = true;
     //#endregion
 
     //#region Clases
@@ -22,6 +23,20 @@
         $("#userModal").modal("hide");
     })
 
+    $('#password').on('input', function () {
+        var password = $(this).val();
+        var errorElement = $('#passwordError');
+
+        if (!ValidatePassword(password)) {
+            errorElement.text('La contraseña debe tener al menos 8 caracteres, una mayúscula, una minúscula, un número y un carácter especial.');
+            errorElement.show();
+        } else {
+            errorElement.text('');
+            errorElement.hide();
+        }
+
+    });
+
     //#region Tablero
     function GetUsers() {
         $('#usersTable').DataTable({
@@ -33,7 +48,7 @@
             },
             "dom": "<'row' <'col-md-12'B>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r><'table-scrollable't><'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>", // horizobtal scrollable datatable
             buttons: [],
-            "order": [[1, "asc"]],
+            "order": [[2, "asc"]],
             "lengthMenu": [
                 [10, 20, 100, 200, 500, 1000, - 1],
                 [10, 20, 100, 200, 500, 1000, "Todos"]
@@ -53,6 +68,12 @@
                 }
             },
             columns: [
+                {
+                    "data": "Id",
+                    "searchable": true,
+                    "className": "dt-center",
+
+                },
                 {
                     "data": "Name",
                     "searchable": true,
@@ -88,6 +109,12 @@
                     "searchable": true,
                     "className": "dt-left",
                 },
+                //{
+                //    "data": "Password",
+                //    "searchable": true,
+                //    "className": "dt-left",
+
+                //},
                 {
                     "data": "StatusName",
                     "searchable": true,
@@ -100,7 +127,7 @@
                     "orderable": false,
                     "defaultContent": "",
                     "render": function (data, type, row) {
-                        return '<button title="Ver" class="btn btn-sm btn-info btn-search"><i class="fa fa-search"></i></button> <button title="Actualizar" class="btn btn-sm btn-primary btn-update"><i class="fa fa-pencil"></i></button> <button title="Eliminar" class="btn btn-sm btn-danger btn-delete"><i class="fa fa-trash"></i></button>'
+                        return '<button title="Visualizar" class="btn btn-sm btn-info btn-search"><i class="fa fa-search"></i></button> <button title="Editar" class="btn btn-sm btn-primary btn-update"><i class="fa fa-pencil"></i></button> <button title="Eliminar" class="btn btn-sm btn-danger btn-delete"><i class="fa fa-trash"></i></button>'
 
                     }
                 }
@@ -219,11 +246,13 @@
 
     //#region Limpiar
     function Clean() {
+        isValid = true;
         user = new UserModel();
         $('#status').prop('checked', true);
         $("#name").val("");
         $("#userName").val("");
         $("#password").val("");
+        $('#passwordError').val("");
         $('#status').prop('disabled', false);
         $('#name').prop('disabled', false);
         $('#userName').prop('disabled', false);
@@ -235,6 +264,9 @@
 
     //#region Funciones
     function SaveOrUpdate() {
+        if (!Valid() || !isValid)
+            return;
+
         $.ajax({
             url: url,
             type: "POST",
@@ -290,18 +322,14 @@
                     }
                     $("#userModal").modal("show");
                 } else {
+                    Swal.close();
                     Swal.fire({
                         title: '¡Error!',
                         text: response.Message,
                         icon: 'error',
                         confirmButtonText: 'OK'
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-
-                        }
                     });
                 }
-
             },
             error: function (response) {
                 Swal.fire({
@@ -309,14 +337,53 @@
                     text: response.Message,
                     icon: 'error',
                     confirmButtonText: 'OK'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-
-                    }
                 });
             }
 
         });
+    }
+    //#endregion
+
+    //#region Validaciones
+    function Valid() {
+        if (IsNullOrUndefined(user.Name)) {
+            Swal.fire({
+                title: '¡Error!',
+                text: "Favor de capturar el campo nombre",
+                icon: 'warning',
+                confirmButtonText: 'OK'
+            });
+            return false;
+        }
+        if (IsNullOrUndefined(user.UserName)) {
+            Swal.fire({
+                title: '¡Error!',
+                text: "Favor de capturar el campo nombre de usuario",
+                icon: 'warning',
+                confirmButtonText: 'OK'
+            });
+            return false;
+        }
+        if (IsNullOrUndefined(user.Password)) {
+            Swal.fire({
+                title: '¡Error!',
+                text: "Favor de capturar el campo contraseña",
+                icon: 'warning',
+                confirmButtonText: 'OK'
+            });
+            return false;
+        }
+        return ValidatePassword(user.Password);
+    }
+
+    function ValidatePassword(password) {
+        var regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z\d]).{8,}$/;
+
+        if (!regex.test(password)) {
+            return false;
+        } else {
+            return true;
+        }
     }
     //#endregion
 

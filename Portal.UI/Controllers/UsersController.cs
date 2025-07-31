@@ -19,23 +19,19 @@ namespace Portal.UI.Controllers
         {
             return View();
         }
-
         public async Task<ActionResult> ListUsers(FilterDataTableModel model)
         {
             UserHandler userHandler = new UserHandler();
 
-            var response = await userHandler.ListUsers(model);
+            var response = await userHandler.GetUserListAsync(model);
 
             return Json(response.Data);
-
-
         }
-
         public async Task<ActionResult> GetUser(int Id)
         {
             UserHandler userHandler = new UserHandler();
 
-            var response = await userHandler.GetUser(Id);
+            var response = await userHandler.GetUserAsync(Id);
             if (response.ResponseType == ResponseType.OK)
             {
                 return Json(new MessageResponse<UserModel>()
@@ -55,13 +51,11 @@ namespace Portal.UI.Controllers
             }
 
         }
-
-
         public async Task<ActionResult> SaveUser(UserModel user)
         {
             UserHandler userHandler = new UserHandler();
 
-            var response = await userHandler.SaveUser(user);
+            var response = await userHandler.CreateUserAsync(user);
             if (response.ResponseType == ResponseType.OK)
             {
                 return Json(new MessageResponse()
@@ -80,12 +74,11 @@ namespace Portal.UI.Controllers
             }
 
         }
-
         public async Task<ActionResult> UpdateUser(UserModel user)
         {
             UserHandler userHandler = new UserHandler();
 
-            var response = await userHandler.UpdateUser(user);
+            var response = await userHandler.ModifyUserAsync(user);
             if (response.ResponseType == ResponseType.OK)
             {
                 return Json(new MessageResponse()
@@ -104,12 +97,11 @@ namespace Portal.UI.Controllers
             }
 
         }
-
         public async Task<ActionResult> DeleteUser(int userId)
         {
             UserHandler userHandler = new UserHandler();
 
-            var response = await userHandler.DeleteUser(userId);
+            var response = await userHandler.RemoveUserAsync(userId);
             if (response.ResponseType == ResponseType.OK)
             {
                 return Json(new MessageResponse()

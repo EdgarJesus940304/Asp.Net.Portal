@@ -62,9 +62,21 @@
     //#region Validaciones
     function Validate() {
         if (IsNullOrUndefined(model.UserName)) {
+            Swal.fire({
+                title: '¡Error!',
+                text: "Favor de capturar usuario",
+                icon: 'warning',
+                confirmButtonText: 'OK'
+            });
             return false;
         }
         if (IsNullOrUndefined(model.Password)) {
+            Swal.fire({
+                title: '¡Error!',
+                text: "Favor de capturar contraseña",
+                icon: 'warning',
+                confirmButtonText: 'OK'
+            });
             return false;
         }
 

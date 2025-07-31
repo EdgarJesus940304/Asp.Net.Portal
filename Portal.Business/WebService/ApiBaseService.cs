@@ -63,15 +63,6 @@ namespace Portal.Business.WebService
 
                 try
                 {
-                    if (!response.IsSuccessStatusCode)
-                    {
-                        return new MessageResponse<TResponse>()
-                        {
-                            Message = respuestaJson,
-                            ResponseType = ResponseType.Error
-                        };
-                    }
-
                     return JsonConvert.DeserializeObject<MessageResponse<TResponse>>(respuestaJson)
                            ?? new MessageResponse<TResponse> { ResponseType = ResponseType.Error, Message = "Respuesta vacía" };
                 }

@@ -12,7 +12,7 @@ namespace Portal.Business.Handler
 {
     public class UserHandler
     {
-        public async Task<RootResult<UserModel>> ListUsers(FilterDataTableModel model)
+        public async Task<RootResult<UserModel>> GetUserListAsync(FilterDataTableModel model)
         {
             try
             {
@@ -26,8 +26,7 @@ namespace Portal.Business.Handler
             }
 
         }
-
-        public async Task<MessageResponse<UserModel>> GetUser(int id)
+        public async Task<MessageResponse<UserModel>> GetUserAsync(int id)
         {
             try
             {
@@ -45,8 +44,7 @@ namespace Portal.Business.Handler
             }
 
         }
-
-        public async Task<MessageResponse> SaveUser(UserModel user)
+        public async Task<MessageResponse> CreateUserAsync(UserModel user)
         {
             try
             {
@@ -64,8 +62,7 @@ namespace Portal.Business.Handler
             }
 
         }
-
-        public async Task<MessageResponse> UpdateUser(UserModel user)
+        public async Task<MessageResponse> ModifyUserAsync(UserModel user)
         {
             try
             {
@@ -83,8 +80,7 @@ namespace Portal.Business.Handler
             }
 
         }
-
-        public async Task<MessageResponse> DeleteUser(int userId)
+        public async Task<MessageResponse> RemoveUserAsync(int userId)
         {
             try
             {
@@ -100,7 +96,6 @@ namespace Portal.Business.Handler
                     Message = $"{ex.Message} {ex?.InnerException?.Message}"
                 };
             }
-
         }
 
     }

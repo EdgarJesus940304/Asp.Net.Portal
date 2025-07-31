@@ -22,7 +22,7 @@ namespace Portal.UI
                       "~/Scripts/sweetalert2.all.js"));
 
             bundles.Add(new Bundle("~/bundles/commons").Include(
-                      "~/Scripts/App/Commons/utils.js"));
+                      "~/Scripts/Commons/utils.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",

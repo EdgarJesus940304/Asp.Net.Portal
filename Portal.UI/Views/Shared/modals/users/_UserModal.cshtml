@@ -8,17 +8,18 @@
                 <div class="row">
                     <div class="col-12">
                         <label for="name" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" tabindex="1" id="name" />
+                        <input type="text" maxlength="200" class="form-control" tabindex="1" id="name" />
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-5">
                         <label for="userName" class="form-label">Usuario</label>
-                        <input type="text" class="form-control" tabindex="2" id="userName" />
+                        <input type="text"  maxlength="100" class="form-control" tabindex="2" id="userName" />
                     </div>
                     <div class="col-md-5">
                         <label for="password" class="form-label">Contraseña</label>
-                        <input type="password" class="form-control" tabindex="3" id="password" />
+                        <input type="password"  maxlength="100" class="form-control" tabindex="3" id="password" />
+                        <small id="passwordError" class="text-danger" style="display:none;"></small>
                     </div>
                     <div class="col-md-2">
                         <div class="form-check" style="margin-top:40px;">
